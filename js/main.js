@@ -23,13 +23,11 @@
         'pi-view': { meta: 'TypeScript · Pi Extension', desc: '为纯文本模型提供显式 view 工具，并把图像路由给视觉模型的 Pi 扩展。' },
         'ant-agent': { meta: 'Shell · Agents', desc: '一次性子代理集合，把临时调查任务隔离在主上下文之外。' },
         'smart-cutout': { meta: 'Swift · Codex Skill', desc: '面向 Codex 的公开 Skill，用于交互式前景抠图和透明 PNG 素材。' },
-        'atom-language-assembly-y86-64': { meta: 'Atom Package', desc: '为 Y86-64 汇编语言提供语法支持的 Atom 语言包。' },
         'claude-code-clip': { meta: 'Shell · macOS', desc: '将文件写入 macOS 剪贴板的工具，提供终端 clip 命令和 Claude Code 的 /clip。' },
         'claude-code-qna': { meta: 'Python · Claude Code Plugin', desc: '将 Claude Code 对话中尚未决定的内容转换成可点击问题的插件。' },
         'claude-code-queue': { meta: 'Claude Code Plugin', desc: 'Claude Code 提示队列：/queue 将消息延后至当前轮次结束后按会话 FIFO 处理。' },
         'dsh-session-link': { meta: 'JavaScript · DSH Plugin', desc: 'DeepSeek Harness 插件：链接并读取 DSH 会话，将会话内容转为可读文本。' },
         'dsh-survey': { meta: 'JavaScript · DSH Plugin', desc: 'DeepSeek Harness 批量问卷插件，支持多种问题类型与提交后的回顾。' },
-        'go-learning': { meta: 'HTML · Go Learning', desc: '面向资深 Java 工程师的 Go 进阶学习路径，提供 Java 对照、可运行示例与练习。' },
         'page-snap': { meta: 'JavaScript · Chrome Extension', desc: 'Chrome 扩展：将网页保存为保真、可供 AI 阅读的 MHTML、单页 HTML 或 ZIP 归档。' },
         'pi-briefly': { meta: 'TypeScript · Pi Extension', desc: '以原生方式紧凑、折叠展示工具调用的 Pi 扩展。' },
         'pi-x-footer': { meta: 'TypeScript · Pi Extension', desc: '可配置的 Pi 多行 Footer，提供本地指标、语义化展示、交互设置及可选的服务商用量监控。' },
@@ -58,13 +56,11 @@
         'pi-view': { meta: 'TypeScript · Pi Extension', desc: 'A Pi extension that gives text-only models an explicit view tool and routes images to a vision model.' },
         'ant-agent': { meta: 'Shell · Agents', desc: 'A disposable subagent collection that keeps one-off investigations out of the main context.' },
         'smart-cutout': { meta: 'Swift · Codex Skill', desc: 'A public Codex skill for interactive foreground cutouts and transparent PNG assets.' },
-        'atom-language-assembly-y86-64': { meta: 'Atom Package', desc: 'An Atom language package for Y86-64 assembly language.' },
         'claude-code-clip': { meta: 'Shell · macOS', desc: 'Put files, rather than text, on the macOS clipboard with a terminal clip command and /clip for Claude Code.' },
         'claude-code-qna': { meta: 'Python · Claude Code Plugin', desc: 'A Claude Code plugin that turns everything still undecided in a conversation into clickable questions.' },
         'claude-code-queue': { meta: 'Claude Code Plugin', desc: 'A prompt queue for Claude Code: /queue defers a message until the current turn ends, in per-session FIFO order.' },
         'dsh-session-link': { meta: 'JavaScript · DSH Plugin', desc: 'A DeepSeek Harness plugin for linking to and reading DSH sessions as readable text.' },
         'dsh-survey': { meta: 'JavaScript · DSH Plugin', desc: 'A DeepSeek Harness questionnaire plugin for batch questions, multiple input types, and post-submit recap.' },
-        'go-learning': { meta: 'HTML · Go Learning', desc: 'An advanced Go learning path for experienced Java engineers, with Java comparisons and runnable examples.' },
         'page-snap': { meta: 'JavaScript · Chrome Extension', desc: 'A Chrome extension that saves pages as faithful, AI-readable MHTML, single HTML, or ZIP archives.' },
         'pi-briefly': { meta: 'TypeScript · Pi Extension', desc: 'A native-first Pi extension for compact, collapsed tool presentation.' },
         'pi-x-footer': { meta: 'TypeScript · Pi Extension', desc: 'A configurable multi-row Pi footer with local metrics, semantic presentation, interactive settings, and optional provider-usage monitoring.' },
@@ -81,8 +77,7 @@
   var projectOrder = [
     'pi-x-footer', 'pi-view', 'dsh-survey', 'dsh-session-link', 'ant-agent',
     'pi-briefly', 'jsonita', 'page-snap', 'pivi', 'claude-code-qna',
-    'smart-cutout', 'claude-code-queue', 'go-learning', 'claude-code-clip',
-    'atom-language-assembly-y86-64'
+    'smart-cutout', 'claude-code-queue', 'claude-code-clip'
   ];
   var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-locale]'));
 

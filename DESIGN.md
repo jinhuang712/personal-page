@@ -40,7 +40,6 @@ typography:
 rounded:
   btn: "12px"
   card: "14px"
-  panel: "20px"
   contact: "24px"
 spacing:
   section: "clamp(88px, 12vw, 152px)"
@@ -116,7 +115,7 @@ components:
 
 ## Layout
 
-72rem 容器，分区纵向节奏 clamp(88px, 12vw, 152px)。Hero 为 7/5 分栏（Editorial Split），≤1024px 折单列且文字先行。作品区为 6 列 `grid-auto-flow: dense` Bento：主推卡 4列×2行，次卡 2列，三卡行 3+3——数学上零空洞；≤1024px 两列、≤640px 单列。所有触摸目标 ≥44px。
+72rem 容器，分区纵向节奏 clamp(88px, 12vw, 152px)。Hero 为文字优先的宽版构图：姓名、定位、双 CTA 与邮箱信息限定在 54rem 阅读宽度内；右侧无装饰性图框，避免无信息的首屏占位。作品区为 6 列 `grid-auto-flow: dense` Bento：主推卡 4列×2行，次卡 2列，三卡行 3+3——数学上零空洞；≤1024px 两列、≤640px 单列。所有触摸目标 ≥44px。
 
 ## Elevation & Depth
 
@@ -129,7 +128,7 @@ components:
 
 ## Shapes
 
-圆角阶梯：按钮 12 / 卡片 14 / 视觉面板 20 / 联系面板 24。标签为 999px 胶囊。分隔一律 1px 发丝线，不用阴影线或粗边框。
+圆角阶梯：按钮 12 / 卡片 14 / 联系面板 24。标签为 999px 胶囊。分隔一律 1px 发丝线，不用阴影线或粗边框。
 
 ## Components
 

@@ -15,7 +15,6 @@
   --accent-deep: #A33323;
   --panel: #191B20;
   --radius: 14px;
-  --radius-lg: 20px;
   --font-sans: "Geist", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
   --shadow-card: 0 2px 6px rgba(23, 24, 28, 0.05);
@@ -104,7 +103,7 @@ a { color: inherit; }
 .nav-gh { display: inline-flex; align-items: center; }
 .nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 
-/* ───────── Hero · Editorial Split ───────── */
+/* ───────── Hero · Text-first editorial ───────── */
 .hero {
   padding-top: clamp(120px, 18vh, 180px);
 }
@@ -112,11 +111,8 @@ a { color: inherit; }
   max-width: 72rem;
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 48px);
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: clamp(32px, 6vw, 80px);
-  align-items: center;
 }
+.hero-text { max-width: 54rem; }
 
 .hero-title { line-height: 1.02; font-weight: 700; }
 .hero-cn {
@@ -161,45 +157,6 @@ a { color: inherit; }
   font-size: 13px;
 }
 .hero-mail a:hover { text-decoration: underline; text-underline-offset: 4px; }
-/* 右侧视觉面板：深墨 + 网格渐变 + 印章 */
-.hero-visual { display: flex; justify-content: flex-end; }
-.hero-panel {
-  position: relative;
-  width: min(100%, 420px);
-  aspect-ratio: 3 / 4;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background:
-    radial-gradient(90% 70% at 85% 12%, rgba(200, 64, 47, 0.16) 0%, transparent 55%),
-    radial-gradient(80% 60% at 12% 88%, rgba(120, 128, 145, 0.20) 0%, transparent 60%),
-    radial-gradient(120% 100% at 50% 50%, #23262d 0%, #191B20 70%);
-  box-shadow: 0 24px 60px rgba(23, 24, 28, 0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* 细网格纹：工程图纸感 */
-.hero-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(0deg, rgba(247, 246, 243, 0.035) 0 1px, transparent 1px 44px),
-    repeating-linear-gradient(90deg, rgba(247, 246, 243, 0.035) 0 1px, transparent 1px 44px);
-}
-.hero-seal {
-  width: 88px; height: 88px;
-  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.4));
-}
-.hero-domain {
-  position: absolute;
-  left: 20px; bottom: 16px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: rgba(247, 246, 243, 0.55);
-}
-
 /* ───────── 无限滚带 ───────── */
 .marquee {
   margin-top: clamp(56px, 9vh, 96px);
@@ -543,9 +500,6 @@ a { color: inherit; }
 
 /* ───────── 响应式 ───────── */
 @media (max-width: 1024px) {
-  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-  .hero-visual { justify-content: flex-start; }
-  .hero-panel { width: min(100%, 360px); }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .card-feature { grid-column: span 2; }
   .card:nth-child(2), .card:nth-child(3),
@@ -557,9 +511,8 @@ a { color: inherit; }
   .nav.scrolled { padding-top: 10px; padding-bottom: 10px; }
   .nav-links { gap: 14px; font-size: 13px; }
   .hero { padding-top: 104px; }
-  .hero-grid { padding: 0 20px; gap: 32px; }
+  .hero-grid { padding: 0 20px; }
   .hero-lead { font-size: 1.02rem; }
-  .hero-panel { width: 100%; max-width: 320px; }
   .marquee-item { font-size: 20px; }
   .marquee-track i { margin: 0 18px; }
   .bento { grid-template-columns: 1fr; }

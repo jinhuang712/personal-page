@@ -25,8 +25,7 @@
     .from('.hero-latin', { y: 24, opacity: 0 }, '-=0.7')
     .from('.hero-lead', { y: 20, opacity: 0 }, '-=0.7')
     .from('.hero-cta', { y: 16, opacity: 0 }, '-=0.7')
-    .from('.hero-mail', { opacity: 0 }, '-=0.5')
-    .from('.hero-panel', { opacity: 0, scale: 0.96, duration: 1.1 }, '-=1.0');
+    .from('.hero-mail', { opacity: 0 }, '-=0.5');
 
   /* 区块入场（一次性淡入上浮） */
   gsap.utils.toArray([

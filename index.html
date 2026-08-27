@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <!--
-  ██ 方向契约（seed 1a79d5ad · 皮影戏台 · grounded #5 · mode: experience）
-  THESIS: 一面被灯点亮的皮影绢幕，访客的光标就是操影人的签手；
-          拒绝"深色背景+粒子+打字机"的个人页默认相。
-  OWN-WORLD: 暖黑夜堂包住一方发亮的米色绢幕；墨色镂空皮影、朱砂印、
-             竹签、木台框；竖排衬线题字、戏文与舞台指示体例。
-  STORY: 访客见皮影随自己起舞 → 明白这是黄锦的戏台 → 翻"幕"读
-         班主其人与戏单 → 以"递帖联络"收束于班主一揖。
-  FIRST VIEWPORT: 满屏一座戏台；绢幕居中占约85%宽；皮影立于右侧约55vh、
-         随光标摆动；左侧竖排"黄锦"大字与朱砂印；顶部横列四枚幕名木牌；
-         主行动"联络班主"居绢幕左下。
-  FORM: 皮影戏台 / grounded #5 / seed 1a79d5ad。
+  ██ 方向契约（design-v2 · 用户收敛版）
+  THESIS: 双语专业身份页，以简单自我介绍、技术关键词与开源项目清单建立信任；
+          拒绝无信息的视觉面板、随机图片、营销式卡片与占位履历。
+  OWN-WORLD: 暖纸底、墨字、单一朱砂强调、发丝线；Geist / Noto Sans SC / Geist Mono；
+             中英文可切换，语言偏好持久化；「锦」仅保留为 favicon 身份锚点。
+  STORY: 访客识别姓名与身份 → 浏览技术关键词 → 扫读项目清单 → GitHub、LinkedIn 或邮件联系。
+  FIRST VIEWPORT: 文字优先 Hero：姓名、普通自我介绍、GitHub 与 LinkedIn 按钮、邮箱；
+                  下方为连续技术关键词带，不放任何无信息装饰。
+  FORM: User override: 保留技术 marquee；删除 Editorial Split、Bento、随机图片、履历占位与测试组件。
   FINISH: unreviewed and undocumented is unfinished; this build ends with
           the finish review, the verdict, and DESIGN.md.
 -->
@@ -18,241 +16,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>黄锦 · huangjin.online</title>
-<meta name="description" content="黄锦的个人戏台——一盏灯、一幅绢、一个人的戏台。关于、手作与联络。">
-<meta property="og:title" content="黄锦 · huangjin.online">
-<meta property="og:description" content="一盏灯、一幅绢、一个人的戏台。">
+<title>黄锦 Huang Jin — 软件工程师</title>
+<meta id="meta-description" name="description" content="黄锦的个人主页：构建面向 AI Agent 与开发者的开源工具。">
+<meta property="og:title" content="黄锦 Huang Jin — 软件工程师">
+<meta property="og:description" content="构建面向 AI Agent 与开发者的开源工具。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://huangjin.online">
 <link rel="icon" type="image/svg+xml" href="assets/seal.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-act="1">
-<!-- ═══════════════ 夜堂（页面地面） ═══════════════ -->
-<main class="room" id="room">
+<body>
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#top"><span class="nav-seal" aria-hidden="true"></span>黄锦</a>
+  <nav class="nav-links" aria-label="页面导航" data-i18n-aria="nav.aria">
+    <a href="#works" data-i18n="nav.projects">项目</a>
+    <a href="#contact" data-i18n="nav.contact">联系</a>
+    <div class="language-switch" role="group" aria-label="语言切换" data-i18n-aria="nav.language">
+      <button class="language-button" type="button" data-locale="zh" aria-pressed="true">中</button>
+      <span class="language-divider" aria-hidden="true">/</span>
+      <button class="language-button" type="button" data-locale="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="nav-gh" href="https://github.com/jinhuang712" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+    </a>
+  </nav>
+</header>
 
-  <!-- 顶部横梁 -->
-  <div class="beam beam-top" aria-hidden="true"></div>
-
-  <!-- ═══════════════ 戏台 ═══════════════ -->
-  <section class="stage" aria-label="皮影戏台">
-
-    <!-- 幕名木牌（导航） -->
-    <nav class="act-tags" aria-label="场次">
-      <button class="act-tag" data-go="1" aria-current="true"><span class="tag-tassel" aria-hidden="true"></span>开场</button>
-      <button class="act-tag" data-go="2"><span class="tag-tassel" aria-hidden="true"></span>关于</button>
-      <button class="act-tag" data-go="3"><span class="tag-tassel" aria-hidden="true"></span>手作</button>
-      <button class="act-tag" data-go="4"><span class="tag-tassel" aria-hidden="true"></span>联络</button>
-    </nav>
-
-    <!-- 绢幕 -->
-    <div class="silk" id="silk">
-
-      <!-- 皮影人偶 -->
-      <div class="puppet-wrap" aria-hidden="true">
-        <svg id="puppet" viewBox="0 0 420 680" class="puppet" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <symbol id="arrow-ne" viewBox="0 0 16 16">
-              <path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </symbol>
-          </defs>
-          <!-- 后臂（远侧） -->
-          <g class="joint j-rs" id="j-rs">
-            <path d="M232,186 C244,204 252,224 252,242" fill="none" stroke="#33261763" stroke-width="17" stroke-linecap="round" style="stroke:#2e2214"/>
-            <g class="joint j-re" id="j-re">
-              <path d="M252,244 C250,264 244,282 238,294" fill="none" stroke="#2e2214" stroke-width="14" stroke-linecap="round"/>
-              <circle cx="236" cy="298" r="9" fill="#2e2214"/>
-            </g>
-          </g>
-
-          <!-- 躯干 -->
-          <g class="joint j-torso" id="j-torso">
-            <path class="robe" fill="#241a10" fill-rule="evenodd" d="
-              M158,168
-              C148,176 142,192 138,216
-              C130,262 122,342 116,422
-              C112,482 106,546 100,596
-              L268,596
-              C262,520 258,470 256,430
-              C254,360 250,272 246,206
-              C244,186 240,172 228,168
-              Z"/>
-            <!-- 镂空：透光的雕花孔 -->
-            <g class="holes" fill="#f0e4c8">
-              <circle cx="168" cy="308" r="4.5"/>
-              <circle cx="196" cy="352" r="3.5"/>
-              <circle cx="152" cy="392" r="3.5"/>
-              <circle cx="212" cy="438" r="4"/>
-              <circle cx="164" cy="486" r="3.5"/>
-              <circle cx="228" cy="520" r="3"/>
-              <circle cx="140" cy="540" r="3"/>
-            </g>
-            <!-- 绦带 -->
-            <path d="M133,266 C178,288 222,288 251,266 L254,296 C224,316 174,316 130,294 Z" fill="#bf3524" opacity="0.92"/>
-            <g fill="#f0e4c8" opacity="0.85">
-              <rect x="158" y="284" width="6" height="14" rx="2" transform="rotate(-8 161 291)"/>
-              <rect x="186" y="292" width="6" height="14" rx="2" transform="rotate(-4 189 299)"/>
-              <rect x="214" y="292" width="6" height="14" rx="2" transform="rotate(6 217 299)"/>
-            </g>
-            <!-- 绢染淡彩 -->
-            <circle cx="196" cy="222" r="20" fill="#e8a33d" opacity="0.22"/>
-            <path d="M120,560 C150,540 210,540 250,556 C244,580 130,582 120,560 Z" fill="#4a7a5a" opacity="0.25"/>
-          </g>
-
-          <!-- 头颈 -->
-          <g class="joint j-neck" id="j-neck">
-            <rect x="176" y="134" width="16" height="26" rx="6" fill="#241a10"/>
-            <path fill="#241a10" d="
-              M168,84
-              C160,90 156,98 155,106
-              L147,114
-              L156,119
-              C153,124 154,129 157,132
-              L159,139
-              C162,147 170,152 180,152
-              C192,152 201,143 203,128
-              C205,108 201,88 191,78
-              C183,71 172,77 168,84 Z"/>
-            <!-- 冠 -->
-            <path fill="#241a10" d="M170,80 C164,62 176,48 191,48 C204,48 212,58 209,74 C196,66 182,68 170,80 Z"/>
-            <circle cx="209" cy="46" r="5.5" fill="#bf3524"/>
-            <!-- 面部镂空 -->
-            <circle cx="164" cy="102" r="3" fill="#f0e4c8"/>
-            <path d="M157,95 C160,93 164,93 167,95" fill="none" stroke="#f0e4c8" stroke-width="2" stroke-linecap="round"/>
-          </g>
-
-          <!-- 前臂（近侧，带水袖） -->
-          <g class="joint j-fs" id="j-fs">
-            <path d="M160,190 C146,208 134,224 128,240" fill="none" stroke="#241a10" stroke-width="18" stroke-linecap="round"/>
-            <g class="joint j-fe" id="j-fe">
-              <!-- 水袖 -->
-              <path class="shui" d="M112,252 C94,268 82,292 80,318 C96,308 114,290 126,266 Z" fill="#e6d9ba" opacity="0.95"/>
-              <path class="shui2" d="M100,288 C96,314 98,342 108,362 C116,344 118,314 114,292 Z" fill="#ede1c4" opacity="0.9"/>
-              <path d="M126,242 C122,260 116,276 106,288" fill="none" stroke="#241a10" stroke-width="14" stroke-linecap="round"/>
-              <circle cx="102" cy="292" r="8.5" fill="#241a10"/>
-            </g>
-          </g>
-
-          <!-- 操纵杆（竹签） -->
-          <g class="rod" id="rod-neck">
-            <line x1="258" y1="706" x2="190" y2="152" stroke="#7a5c35" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="258" cy="706" r="7" fill="#7a5c35"/>
-          </g>
-          <g class="rod" id="rod-hand">
-            <line x1="322" y1="706" x2="238" y2="298" stroke="#7a5c35" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="322" cy="706" r="7" fill="#7a5c35"/>
-          </g>
-        </svg>
+<main class="page" id="top">
+  <section class="hero">
+    <div class="container hero-content">
+      <h1 class="hero-title"><span class="hero-cn">黄锦</span><span class="hero-latin">Huang Jin</span></h1>
+      <p class="hero-lead" data-i18n="hero.intro">你好，我是黄锦，一名软件工程师，主要做 AI 工具和 Agent 相关的开源项目。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://github.com/jinhuang712" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>GitHub
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/jinhuang712/" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>LinkedIn
+        </a>
       </div>
-
-      <!-- 题字（竖排） -->
-      <header class="title-block">
-        <h1 class="title-cn">黄锦</h1>
-        <p class="title-latin">HUANG JIN · huangjin.online</p>
-        <div class="seal" aria-hidden="true">
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="60" height="60" rx="6" fill="#bf3524"/>
-            <text x="32" y="45" text-anchor="middle" font-family="'Kaiti SC','STKaiti','Noto Serif SC',serif" font-size="40" font-weight="900" fill="#f0e4c8">锦</text>
-          </svg>
-        </div>
-      </header>
-
-      <!-- 四幕 -->
-      <div class="acts">
-
-        <!-- 第一幕 · 开场 -->
-        <section class="act act-1" data-act="1" aria-label="第一幕 开场">
-          <p class="stage-direction">（一盏灯，一幅绢，一个人的戏台。）</p>
-          <p class="lead">灯已点起，影已上墙。</p>
-          <p class="stage-direction bio-todo">（此处该有一句自我介绍，等你来写。）</p>
-          <div class="cta-row">
-            <a class="btn btn-seal" href="mailto:huangjin712@qq.com">联络班主</a>
-            <button class="btn btn-ghost" data-go="3">翻看戏单</button>
-          </div>
-        </section>
-
-        <!-- 第二幕 · 关于 -->
-        <section class="act act-2" data-act="2" aria-label="第二幕 关于">
-          <h2 class="act-heading">第二幕 · 关于班主</h2>
-          <p class="stage-direction bio-todo">（班主其人，两三段戏文，待补。）</p>
-          <p class="act-body">
-            班主姓黄名锦，以 <a href="https://github.com/jinhuang712" target="_blank" rel="noopener">GitHub&nbsp;@jinhuang712</a>
-            行世。白日搭台写码，夜里掌灯改戏：凡是能让工具更顺手、让重复更少的事，都算他的戏路。
-          </p>
-          <p class="act-body">
-            这方绢幕既是名片，也是戏台：往后有了新戏、新篇目，都在这里开演。
-          </p>
-        </section>
-
-        <!-- 第三幕 · 手作（戏单） -->
-        <section class="act act-3" data-act="3" aria-label="第三幕 手作">
-          <h2 class="act-heading">第三幕 · 戏单</h2>
-          <p class="stage-direction">（近来排的几出新戏，皆已开源，下乡可观。）</p>
-          <ul class="playbill">
-            <li class="play">
-              <a class="play-name" href="https://github.com/jinhuang712/gotato" target="_blank" rel="noopener">gotato</a>
-              <span class="play-genre">Go</span>
-              <span class="play-note">Go 原生的 Agent 服务，内核小而完整，一个规范的 Agent 循环</span>
-              <span class="play-arrow" aria-hidden="true"><svg width="13" height="13"><use href="#arrow-ne"/></svg></span>
-            </li>
-            <li class="play">
-              <a class="play-name" href="https://github.com/jinhuang712/jsonita" target="_blank" rel="noopener">jsonita</a>
-              <span class="play-genre">TypeScript</span>
-              <span class="play-note">macOS 菜单栏 JSON 工具箱：格式化、树览、AI 顺手修</span>
-              <span class="play-arrow" aria-hidden="true"><svg width="13" height="13"><use href="#arrow-ne"/></svg></span>
-            </li>
-            <li class="play">
-              <a class="play-name" href="https://github.com/jinhuang712/pi-view" target="_blank" rel="noopener">pi-view</a>
-              <span class="play-genre">TypeScript</span>
-              <span class="play-note">让纯文本模型看懂图像的 Pi 扩展</span>
-              <span class="play-arrow" aria-hidden="true"><svg width="13" height="13"><use href="#arrow-ne"/></svg></span>
-            </li>
-            <li class="play">
-              <a class="play-name" href="https://github.com/jinhuang712/ant-agent" target="_blank" rel="noopener">ant-agent</a>
-              <span class="play-genre">Shell</span>
-              <span class="play-note">一窝用完即弃的子代理，把杂务挡在主上下文之外</span>
-              <span class="play-arrow" aria-hidden="true"><svg width="13" height="13"><use href="#arrow-ne"/></svg></span>
-            </li>
-            <li class="play">
-              <a class="play-name" href="https://github.com/jinhuang712/smart-cutout" target="_blank" rel="noopener">smart-cutout</a>
-              <span class="play-genre">Swift</span>
-              <span class="play-note">交互式前景抠图，直出透明 PNG</span>
-              <span class="play-arrow" aria-hidden="true"><svg width="13" height="13"><use href="#arrow-ne"/></svg></span>
-            </li>
-          </ul>
-          <p class="more-plays">更多剧目，尽在 <a href="https://github.com/jinhuang712" target="_blank" rel="noopener">GitHub 戏箱 ↗</a></p>
-        </section>
-
-        <!-- 终幕 · 联络 -->
-        <section class="act act-4" data-act="4" aria-label="终幕 联络">
-          <h2 class="act-heading">终幕 · 会班主</h2>
-          <p class="lead">戏散了，灯还亮着。有事，请递帖。</p>
-          <div class="cta-row">
-            <a class="btn btn-seal btn-big" href="mailto:huangjin712@qq.com">递帖 · huangjin712@qq.com</a>
-            <a class="btn btn-ghost" href="https://github.com/jinhuang712" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-          <p class="stage-direction bio-todo">（微信、知乎或其他联系方式，待补。）</p>
-          <p class="bow-note" aria-hidden="true">（班主一揖）</p>
-        </section>
-      </div>
+      <p class="hero-mail"><span data-i18n="hero.contactLabel">合作、招聘与联系：</span> <a href="mailto:huangjin712@qq.com">huangjin712@qq.com</a></p>
     </div>
 
-    <!-- 台框与底梁 -->
-    <div class="frame-line frame-left" aria-hidden="true"></div>
-    <div class="frame-line frame-right" aria-hidden="true"></div>
-    <div class="beam beam-bottom" aria-hidden="true"></div>
+    <div class="marquee" role="region" aria-label="技术关键词" data-i18n-aria="marquee.aria">
+      <div class="marquee-track" id="marquee-track" aria-hidden="true"></div>
+    </div>
   </section>
 
-  <!-- 堂内落款 -->
-  <footer class="room-footer">
-    <span>huangjin.online · 一盏灯，一幅绢</span>
-    <span class="room-copy">© 2026 黄锦</span>
+  <section class="section projects-section" id="works">
+    <div class="container">
+      <h2 class="section-title" data-i18n="projects.title">开源项目</h2>
+      <p class="section-lead" data-i18n="projects.lead">以下项目按代码体量与最近推送综合排序。</p>
+      <ul class="project-list" aria-label="开源项目" data-i18n-aria="projects.aria">
+        <li><a class="project-row" data-project="jsonita" href="https://github.com/jinhuang712/jsonita" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/jsonita.png" alt=""></span><h3 class="project-name">jsonita</h3></div><p class="project-meta">TypeScript · macOS / Windows</p></div><p class="project-desc">macOS 与 Windows 菜单栏 JSON 工具箱：格式化、树状预览、转换与 AI 辅助修复。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="pi-view" href="https://github.com/jinhuang712/pi-view" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/pi.svg" alt=""></span><h3 class="project-name">pi-view</h3></div><p class="project-meta">TypeScript · Pi Extension</p></div><p class="project-desc">为纯文本模型提供显式 view 工具，并把图像路由给视觉模型的 Pi 扩展。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="ant-agent" href="https://github.com/jinhuang712/ant-agent" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks project-marks-dual" aria-hidden="true"><img class="project-logo" src="assets/brands/codex.svg" alt=""><img class="project-logo" src="assets/brands/claude.svg" alt=""></span><h3 class="project-name">ant-agent</h3></div><p class="project-meta">Shell · Agents</p></div><p class="project-desc">一次性子代理集合，把临时调查任务隔离在主上下文之外。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="smart-cutout" href="https://github.com/jinhuang712/smart-cutout" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/codex.svg" alt=""></span><h3 class="project-name">smart-cutout</h3></div><p class="project-meta">Swift · Codex Skill</p></div><p class="project-desc">面向 Codex 的公开 Skill，用于交互式前景抠图和透明 PNG 素材。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="atom-language-assembly-y86-64" href="https://github.com/jinhuang712/atom-language-assembly-y86-64" target="_blank" rel="noopener"><div class="project-identity"><h3 class="project-name">atom-language-assembly-y86-64</h3><p class="project-meta">Atom Package</p></div><p class="project-desc">为 Y86-64 汇编语言提供语法支持的 Atom 语言包。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="claude-code-clip" href="https://github.com/jinhuang712/claude-code-clip" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/claude.svg" alt=""></span><h3 class="project-name">claude-code-clip</h3></div><p class="project-meta">Shell · macOS</p></div><p class="project-desc">将文件写入 macOS 剪贴板的工具，提供终端 clip 命令和 Claude Code 的 /clip。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="claude-code-qna" href="https://github.com/jinhuang712/claude-code-qna" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/claude.svg" alt=""></span><h3 class="project-name">claude-code-qna</h3></div><p class="project-meta">Python · Claude Code Plugin</p></div><p class="project-desc">将 Claude Code 对话中尚未决定的内容转换成可点击问题的插件。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="claude-code-queue" href="https://github.com/jinhuang712/claude-code-queue" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/claude.svg" alt=""></span><h3 class="project-name">claude-code-queue</h3></div><p class="project-meta">Claude Code Plugin</p></div><p class="project-desc">Claude Code 提示队列：/queue 将消息延后至当前轮次结束后按会话 FIFO 处理。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="dsh-session-link" href="https://github.com/jinhuang712/dsh-session-link" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/dsh.svg" alt=""></span><h3 class="project-name">dsh-session-link</h3></div><p class="project-meta">JavaScript · DSH Plugin</p></div><p class="project-desc">DeepSeek Harness 插件：链接并读取 DSH 会话，将会话内容转为可读文本。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="dsh-survey" href="https://github.com/jinhuang712/dsh-survey" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/dsh.svg" alt=""></span><h3 class="project-name">dsh-survey</h3></div><p class="project-meta">JavaScript · DSH Plugin</p></div><p class="project-desc">DeepSeek Harness 批量问卷插件，支持多种问题类型与提交后的回顾。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="go-learning" href="https://github.com/jinhuang712/go-learning" target="_blank" rel="noopener"><div class="project-identity"><h3 class="project-name">go-learning</h3><p class="project-meta">HTML · Go Learning</p></div><p class="project-desc">面向资深 Java 工程师的 Go 进阶学习路径，提供 Java 对照、可运行示例与练习。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="page-snap" href="https://github.com/jinhuang712/page-snap" target="_blank" rel="noopener"><div class="project-identity"><h3 class="project-name">page-snap</h3><p class="project-meta">JavaScript · Chrome Extension</p></div><p class="project-desc">Chrome 扩展：将网页保存为保真、可供 AI 阅读的 MHTML、单页 HTML 或 ZIP 归档。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="pi-briefly" href="https://github.com/jinhuang712/pi-briefly" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/pi.svg" alt=""></span><h3 class="project-name">pi-briefly</h3></div><p class="project-meta">TypeScript · Pi Extension</p></div><p class="project-desc">以原生方式紧凑、折叠展示工具调用的 Pi 扩展。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="pi-x-footer" href="https://github.com/jinhuang712/pi-x-footer" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/pi.svg" alt=""></span><h3 class="project-name">pi-x-footer</h3></div><p class="project-meta">TypeScript · Pi Extension</p></div><p class="project-desc">可配置的 Pi 多行 Footer，提供本地指标、语义化展示、交互设置及可选的服务商用量监控。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a class="project-row" data-project="pivi" href="https://github.com/jinhuang712/pivi" target="_blank" rel="noopener"><div class="project-identity"><div class="project-title"><span class="project-marks" aria-hidden="true"><img class="project-logo" src="assets/brands/pivi.png" alt=""></span><h3 class="project-name">pivi</h3></div><p class="project-meta">TypeScript · Tauri / React / Rust</p></div><p class="project-desc">面向电竞开黑场景的桌面语音应用，基于 Tauri、React 与 Rust，采用本地优先架构。</p><span class="project-link">GitHub <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-panel">
+        <h2 class="contact-title" data-i18n="contact.title">保持联系</h2>
+        <p class="contact-lead" data-i18n="contact.lead">无论是合作、机会，还是只是打个招呼。</p>
+        <div class="contact-cta">
+          <a class="btn btn-invert" href="mailto:huangjin712@qq.com"><span data-i18n="contact.email">发邮件</span>
+            <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4,12 L12,4 M5.5,4 H12 V10.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-outline" href="https://github.com/jinhuang712" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/jinhuang712/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner"><span class="footer-name">黄锦 Huang Jin</span><span class="footer-meta">© 2026 · huangjin.online</span></div>
   </footer>
 </main>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

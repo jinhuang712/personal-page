@@ -1,165 +1,135 @@
 ---
-name: 皮影戏台 · huangjin.online
-description: 黄锦的个人主页——一座夜堂里被灯点亮的皮影戏台
+name: 黄锦 Huang Jin · 个人主页 v2
+description: 极简双语专业身份页——暖纸、墨字、朱砂、项目清单
 colors:
-  room: "#171008"
-  room-2: "#251a0c"
-  wood: "#3a2a18"
-  wood-hi: "#54391d"
-  silk: "#f0e4c8"
-  silk-hi: "#fbf3dd"
-  silk-lo: "#ddc9a0"
-  ink: "#241a10"
-  ink-2: "#45351f"
-  ink-soft: "#6b5335"
-  seal: "#bf3524"
-  seal-hi: "#d94a30"
-  amber: "#e8a33d"
-  bamboo: "#7a5c35"
-  cream: "#e9dcb8"
-  cream-dim: "#b9a87f"
+  bg: "#F7F6F3"
+  surface: "#FFFFFF"
+  ink: "#17181C"
+  ink-2: "#5C5F66"
+  ink-3: "#8A8D94"
+  hairline: "#E6E4DE"
+  accent: "#C8402F"
+  accent-deep: "#A33323"
+  panel: "#191B20"
+  paper-on-dark: "#F2F1EC"
 typography:
   display:
-    fontFamily: "'Noto Serif SC', 'Songti SC', 'STSong', serif"
-    fontWeight: 900
-    fontSize: "clamp(56px, 11vh, 104px)"
-    letterSpacing: "0.18em"
-    lineHeight: 1
-  headline:
-    fontFamily: "'Noto Serif SC', 'Songti SC', serif"
-    fontWeight: 900
-    fontSize: "clamp(24px, 4.6vh, 38px)"
-    letterSpacing: "0.06em"
-  lead:
-    fontFamily: "'Noto Serif SC', serif"
-    fontWeight: 600
-    fontSize: "clamp(22px, 4.4vh, 40px)"
-    lineHeight: 1.4
+    fontFamily: "Geist, Noto Sans SC, PingFang SC, sans-serif"
+    fontWeight: 700
+    fontSize: "clamp(3.25rem, 6vw, 5.25rem)"
+    letterSpacing: "0.04em"
+    lineHeight: 1.02
   body:
-    fontFamily: "'Noto Serif SC', serif"
-    fontWeight: 500
-    fontSize: "clamp(14px, 2.1vh, 17px)"
-    lineHeight: 1.9
-  stage-direction:
-    fontFamily: "'Kaiti SC', 'STKaiti', 'KaiTi', 'Noto Serif SC', serif"
-    fontWeight: 500
-    fontSize: "clamp(13px, 2vh, 16px)"
-    letterSpacing: "0.08em"
+    fontFamily: "Geist, Noto Sans SC, PingFang SC, sans-serif"
+    fontWeight: 400
+    fontSize: "16px"
+    lineHeight: 1.7
+  mono:
+    fontFamily: "Geist Mono, ui-monospace, SF Mono, monospace"
+    fontWeight: 400
+    fontSize: "12px-14px"
 rounded:
-  sm: "3px"
-  md: "4px"
-  screen: "10px"
+  button: "12px"
+  contact: "20px"
 spacing:
-  xs: "8px"
-  sm: "14px"
-  md: "22px"
-  lg: "clamp(24px, 6%, 84px)"
+  section: "clamp(76px, 10vw, 128px)"
+  container: "clamp(20px, 5vw, 48px)"
 components:
-  button-seal:
-    backgroundColor: "{colors.seal}"
-    textColor: "{colors.silk-hi}"
-    rounded: "{rounded.md}"
-    padding: "12px 22px"
+  button-primary:
+    backgroundColor: "{colors.ink}"
+    textColor: "#FFFFFF"
+    rounded: "{rounded.button}"
+    padding: "13px 24px"
   button-ghost:
-    backgroundColor: "transparent"
+    backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
-    padding: "12px 22px"
-  act-tag-active:
-    backgroundColor: "{colors.silk-hi}"
+    rounded: "{rounded.button}"
+    padding: "13px 24px"
+  button-invert:
+    backgroundColor: "{colors.paper-on-dark}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.sm}"
-  act-tag-idle:
-    backgroundColor: "#45311790"
-    textColor: "{colors.cream-dim}"
-    rounded: "{rounded.sm}"
+    rounded: "{rounded.button}"
+    padding: "13px 24px"
 ---
 
-# Design System: 皮影戏台 · huangjin.online
+# Design System: 黄锦 Huang Jin · 个人主页 v2
 
 ## Overview
 
-**Creative North Star: "一堂被灯点亮的皮影戏"**
+**Creative North Star: "The Minimal Professional Index"（极简专业索引）**
 
-整个系统是一座戏台：页面地面是深夜的堂屋，中央一方被灯光从背后打亮的米色绢幕承载全部内容，墨色皮影人偶以竹签操纵、随访客光标起舞。朱砂红是唯一的强调色，只在印、绦带、主按钮、活动幕牌上出现——它的稀有就是它的分量。所有文案使用戏团体例：标题是幕名，说明是舞台指示（圆括号楷体）。
+这是身份页，不是营销页。页面只回答四个问题：你是谁、做什么、做过什么、如何联系。技术关键词带提供密度，项目清单提供证据；任何不能回答这四个问题的图片、卡片、占位或动效都不出现。
 
 **Key Characteristics:**
-- 内容永远住在发光的绢幕上，夜堂只做包裹与留白
-- 皮影是可动资产（SVG 关节 + CSS 变量驱动），不是插图
-- 中文竖排在桌面端承担展示层；移动端全部转为横排文档流
+- 暖纸底、墨字、1px 发丝线、单一朱砂链接色
+- 文字优先 Hero，只有 GitHub、LinkedIn 和邮箱三种主联系入口
+- 无图片、无 Bento、无项目卡片、无空履历
+- CN / EN 切换，浏览器语言默认、手动选择持久化
 
 ## Colors
 
-色板来自夜堂的物质世界：木、绢、墨、朱砂、灯。
-
 ### Primary
-- **朱砂 Seal** (#bf3524)：印、绦带、主按钮、活动指示。hover 提亮为 #d94a30。全场 ≤10% 面积。
-- **绢 Silk** (#f0e4c8)：内容面板基色；中心高光 #fbf3dd、边缘暗部 #ddc9a0 由径向渐变产生"灯从背后打亮"。
+- **朱砂 Accent** (#C8402F)：链接、项目 GitHub 入口、关键词圆点。仅此一色强调。
+- **墨 Ink** (#17181C)：姓名、标题、深色主按钮。
 
 ### Neutral
-- **夜堂 Room** (#171008 / #251a0c)：页面地面，径向渐变给出台口微光。
-- **木 Wood** (#3a2a18 / #54391d)：台框、横梁、木牌基色。
-- **墨 Ink** (#241a10 / #45351f)：绢上的正文与皮影本体；次级文字 #6b5335（暖棕，禁用冷灰）。
-- **堂内浅字 Cream** (#e9dcb8 / #b9a87f)：夜堂里的落款文字。
+- **纸底** (#F7F6F3)：全页地面。
+- **白面** (#FFFFFF)：仅 Ghost 按钮使用，不做卡片。
+- **次级正文** (#5C5F66)：所有说明文字。
+- **弱级文字** (#8A8D94)：项目 meta、技术带。
+- **发丝线** (#E6E4DE)：导航、关键词带、项目行分隔。
+- **深墨面板** (#191B20) / **纸色前景** (#F2F1EC)：联系区色彩反转。
 
 ### Named Rules
-**The 朱砂十成一 Rule.** 朱砂只给"印记级"元素（印、绦带、主 CTA、当前幕）。它是戳记，不是涂装。
+**The One Accent Rule.** 朱砂只承担链接与分隔点；没有第二强调色，也没有渐变文字。
 
 ## Typography
 
-**Display/Body Font:** Noto Serif SC（CDN，font-display: swap；回退 Songti SC / STSong）
-**Stage Direction Font:** Kaiti SC / STKaiti / KaiTi（系统字，不加载）
+**Display / Body:** Geist + Noto Sans SC；**Measurement:** Geist Mono。
 
-**Character:** 宋体系的骨架承担"戏单排印"的传统；楷体只用于舞台指示，制造"念白"的声部差。
+- **Display** (700, clamp(3.25rem, 6vw, 5.25rem))：仅姓名。
+- **Body** (400, 16px, 1.7)：简介和项目描述。
+- **Mono** (12-14px)：项目技术 meta、邮箱、语言切换。
 
-### Hierarchy
-- **Display** (900, clamp(56px, 11vh, 104px), 0.18em tracking, vertical-rl)：仅用于"黄锦"题字。
-- **Headline** (900, clamp(24px, 4.6vh, 38px))：幕名，下缘缀 3.2em 朱砂短线。
-- **Lead** (600, clamp(22px, 4.4vh, 40px), 1.4)：开场句。
-- **Body** (500, clamp(14px, 2.1vh, 17px), 1.9)：正文，≤34em 行长。
-- **Stage Direction** (楷体, 括号体例)：占位说明、氛围句。凡"待补"内容一律用此声部。
-
-### Named Rules
-**The 括号即旁白 Rule.** 圆括号 + 楷体 = 舞台指示声部，专用于占位与氛围句，绝不用于操作性文案。
+**The Mono Is Metadata Rule.** 等宽字只呈现技术分类或联系数据，不制造虚假的技术氛围。
 
 ## Layout
 
-桌面端是"一屏一台"：`.room` 100dvh 纵向 flex（顶梁 → 戏台 → 落款），`.stage` 内只有绢幕参与 flex，其余（侧框、底梁、木牌）一律绝对定位。绢幕宽 min(100%, 1400px)，内容左侧留 lg（clamp(24px, 6%, 84px)）起排，右侧 34vw 让位给皮影。≤860px 切换为文档流：木牌横排置顶、题字横排、皮影缩小浮于右上、幕文顺排，`body` 允许滚动。
+容器宽度 72rem，横向内距 clamp(20px, 5vw, 48px)。首屏内容最大 54rem，信息按姓名 → 简介 → 按钮 → 邮箱排列。技术关键词带之后直接进入项目清单。
+
+项目列表桌面端为三列：项目身份 / 描述 / GitHub；移动端折为项目身份与链接同一行、描述占满下一行。精选公开项目按仓库体量和最近代码推送综合排序；有真实产品标识时，以名称左侧 25px 小图标标示生态归属。每行由 1px 发丝线分开，不使用卡片容器。移动端起点 360px，页面禁止横向溢出。
 
 ## Elevation & Depth
 
-深度来自"光"而非"层"：绢幕的外发光（0 0 clamp(30px,6vw,90px) rgba(232,163,61,.16)）宣告它是唯一光源面；木构件用方向性阴影（0 6px 14px rgba(0,0,0,.5)）表达体量；皮影以 drop-shadow(-12px 14px 14px rgba(70,46,16,.32)) 把影子落在绢上。零偏移彩色光晕只允许出现在绢幕辉光一处。
+页面默认无阴影。深度只来自联系区的墨色反转、按钮描边和固定导航的毛玻璃背景；项目行没有浮起、缩放或阴影状态。
 
 ## Shapes
 
-圆角克制：屏 10px、构件 4px、小签 3px。木构件以 repeating-linear-gradient 的细密线纹做木纹与绢纹（1px 线，3–5px 周期，4.5% 以下透明度）——纹理只从题材世界来。皮影的轮廓语言：圆润的头部弧线、宽袍、水袖的贝塞尔飘带；镂空以绢色圆点与透染淡彩表达。
+按钮圆角 12px，联系面板圆角 20px；所有其他内容保持直线与发丝边。关键词圆点为唯一圆形装饰。
 
 ## Components
 
+### Navigation and Language Switch
+固定顶栏：品牌、项目、联系、CN / EN、GitHub。语言按钮最小高度 44px；选择状态只改变文字颜色。首次按浏览器语言选择，手动选择写入 `hj-locale` localStorage。
+
+### Project Index
+可点击的整行项目条目：项目名与 Mono meta 在左、说明居中、GitHub 链接在右；移动端自然折行。hover 只把项目名转为 Accent，不位移、不缩放。
+
+### Keyword Marquee
+16 个真实技术关键词，两份等长序列保证无缝循环。48 秒线性滚动；`prefers-reduced-motion` 时静止。
+
 ### Buttons
-- **Shape:** 4px 圆角，衬线 600，0.14em tracking
-- **Primary（印章钮）:** 朱砂底 + 内嵌 3px 绢色描边（inset box-shadow），padding 12px 22px；hover 提亮 + 上浮 2px
-- **Ghost:** 透明底、1px 墨线框；移动端强制绢色实底保证可读
-- **Focus:** 2px amber outline, offset 3px
-
-### 幕名木牌（Navigation）
-竖排木牌挂于顶梁（top:-14px），活动态换绢底墨字 + 朱砂穗；键盘 ←/→ 翻幕。移动端转横排胶囊，活动态朱砂底。
-
-### 戏单行（Playbill Row）
-上/下 1px 分隔线的节目单行（非卡片）：剧名（衬线 600，min-width 8.5em）→ 剧种小签（1px 框 11px）→ 楷体戏文 → SVG 外链箭头。hover：淡金底 + translateX(8px)。
-
-### 皮影人偶（Signature Component）
-420×680 viewBox 的关节化 SVG：脖、躯、双肩双肘六个关节各持 CSS 变量角度，JS 以 lerp 插值 + 每幕姿势库 + 光标跟踪驱动；两根竹签以底端为轴反推角度。`prefers-reduced-motion` 下静止。水袖、镂空孔、朱砂绒球是轮廓的一部分，删改前先读 `js/main.js` 的 POSES。
+Hero：深墨 GitHub 主按钮 + 白底 LinkedIn 次按钮。联系区：纸底邮件按钮。所有按钮最小高度 44px，焦点状态为 2px Accent outline。
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** 让新内容住进"幕"结构：一个区块 = 一幕，配一条姿势库记录（`POSES`）。
-- **Do** 占位与未定内容一律用楷体括号声部标注「待补」。
-- **Do** 新增强调元素时先问：它配得上朱砂吗？不配就用墨或木。
+- **Do** 只展示真实、可验证的项目和联系信息。
+- **Do** 为每一条可翻译的可见文案同时维护 CN 与 EN。
+- **Do** 用项目清单而不是卡片展示工程工作。
 
 ### Don't:
-- **Don't** 引入冷灰色（次级文字用 #6b5335 系暖棕）。
-- **Don't** 给皮影或文字加发光/霓虹效果——光只属于绢幕后的那盏灯。
-- **Don't** 用 emoji/字符当图标；外链箭头用 `#arrow-ne` symbol。
-- **Don't** 在夜堂区域放内容卡片；夜堂只有梁、框、落款。
+- **Don't** 添加随机图片、作品大图、Bento、轮播或项目卡片。
+- **Don't** 展示空履历、待补教育或虚构推荐语。
+- **Don't** 用 slogan 替代普通自我介绍。
+- **Don't** 引入第二强调色、渐变字或无信息的装饰框。

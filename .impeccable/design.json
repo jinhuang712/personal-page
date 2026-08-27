@@ -1,76 +1,54 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-28T00:55:00+08:00",
-  "title": "Design System: 皮影戏台 · huangjin.online",
+  "generatedAt": "2026-08-28T03:10:00+08:00",
+  "title": "Design System: 黄锦 Huang Jin · 个人主页 v2",
   "extensions": {
     "colorMeta": {
-      "seal": { "role": "primary", "displayName": "朱砂 Seal", "canonical": "#bf3524" },
-      "silk": { "role": "primary", "displayName": "绢 Silk", "canonical": "#f0e4c8" },
-      "room": { "role": "neutral", "displayName": "夜堂 Room", "canonical": "#171008" },
-      "wood": { "role": "neutral", "displayName": "台框木 Wood", "canonical": "#3a2a18" },
-      "ink": { "role": "neutral", "displayName": "皮影墨 Ink", "canonical": "#241a10" },
-      "amber": { "role": "tertiary", "displayName": "灯焰 Amber", "canonical": "#e8a33d" }
+      "accent": { "role": "primary", "displayName": "朱砂 Accent", "canonical": "#C8402F" },
+      "ink": { "role": "primary", "displayName": "墨 Ink", "canonical": "#17181C" },
+      "bg": { "role": "neutral", "displayName": "纸底", "canonical": "#F7F6F3" },
+      "panel": { "role": "neutral", "displayName": "联系面板", "canonical": "#191B20" }
     },
-    "shadows": [
-      { "name": "silk-glow", "value": "0 0 clamp(30px, 6vw, 90px) rgba(232,163,61,0.16)", "purpose": "绢幕被灯打亮的外发光；全场唯一光晕。" },
-      { "name": "wood-mass", "value": "0 6px 14px rgba(0,0,0,0.5)", "purpose": "木梁与台框的体量感。" },
-      { "name": "puppet-cast", "value": "drop-shadow(-12px 14px 14px rgba(70,46,16,0.32))", "purpose": "皮影投在绢上的影子，随关节自动跟随。" }
-    ],
     "motion": [
-      { "name": "act-switch", "value": "opacity/filter/transform 0.55s ease (0.12s delay)", "purpose": "换幕：旧幕淡出虚化、新幕自右侧入场，配 lamp-flicker 灯焰轻晃。" },
-      { "name": "joint-lerp", "value": "k=0.055 per-frame lerp", "purpose": "皮影关节朝目标姿势（光标+呼吸+幕姿势库）的缓动。" }
+      { "name": "marquee", "value": "translateX(-50%) 48s linear infinite", "purpose": "16 个技术关键词的无缝滚动；reduced-motion 时静止。" },
+      { "name": "nav", "value": "background and box-shadow 0.2s ease", "purpose": "固定导航滚动后的毛玻璃状态。" }
     ],
     "breakpoints": [
-      { "name": "mobile", "value": "860px" }
+      { "name": "mobile", "value": "640px" }
     ]
   },
   "components": [
     {
-      "name": "印章按钮 Primary",
+      "name": "主按钮",
       "kind": "button",
-      "refersTo": "button-seal",
-      "description": "朱砂底、内嵌绢色描边的主行动钮。",
-      "html": "<a class=\"ds-btn-seal\" href=\"#\">联络班主</a>",
-      "css": ".ds-btn-seal { display:inline-flex; font-family:'Noto Serif SC',serif; font-weight:600; letter-spacing:0.14em; text-decoration:none; border-radius:4px; padding:12px 22px; background:#bf3524; color:#fbf3dd; border:1px solid #97301f; box-shadow:0 6px 18px rgba(191,53,36,0.35), inset 0 0 0 3px rgba(240,228,200,0.22); transition:transform .2s ease, background .2s ease; } .ds-btn-seal:hover { background:#d94a30; transform:translateY(-2px); } .ds-btn-seal:focus-visible { outline:2px solid #e8a33d; outline-offset:3px; }"
+      "refersTo": "button-primary",
+      "description": "深墨 GitHub 主行动按钮。",
+      "html": "<a class=\"ds-primary\" href=\"#\">GitHub</a>",
+      "css": ".ds-primary { display:inline-flex; align-items:center; min-height:44px; padding:13px 24px; border-radius:12px; background:#17181C; color:#fff; font:600 15px Geist,'Noto Sans SC',sans-serif; text-decoration:none; } .ds-primary:hover { background:#000; } .ds-primary:focus-visible { outline:2px solid #C8402F; outline-offset:3px; }"
     },
     {
-      "name": "幽灵按钮 Ghost",
-      "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "透明底墨线框的次级按钮。",
-      "html": "<button class=\"ds-btn-ghost\">翻看戏单</button>",
-      "css": ".ds-btn-ghost { display:inline-flex; font-family:'Noto Serif SC',serif; font-weight:600; letter-spacing:0.14em; border-radius:4px; padding:12px 22px; background:transparent; color:#241a10; border:1px solid rgba(36,26,16,0.55); cursor:pointer; transition:transform .2s ease, background .2s ease; } .ds-btn-ghost:hover { border-color:#241a10; background:rgba(36,26,16,0.06); transform:translateY(-2px); } .ds-btn-ghost:focus-visible { outline:2px solid #e8a33d; outline-offset:3px; }"
+      "name": "项目清单行",
+      "kind": "custom",
+      "refersTo": "project-row",
+      "description": "项目身份、说明、GitHub 链接的发丝线清单行。",
+      "html": "<a class=\"ds-project\" href=\"#\"><div><strong>pi-view</strong><small>TypeScript · Pi Extension</small></div><p>A Pi extension that gives text-only models an explicit view tool and routes images to a vision model.</p><span>GitHub ↗</span></a>",
+      "css": ".ds-project { min-height:122px; display:grid; grid-template-columns:minmax(160px,.85fr) minmax(0,2fr) auto; gap:28px; align-items:center; padding:24px 0; border-bottom:1px solid #E6E4DE; color:#17181C; text-decoration:none; font-family:Geist,'Noto Sans SC',sans-serif; } .ds-project small { display:block; margin-top:3px; color:#8A8D94; font:12px 'Geist Mono',monospace; } .ds-project p { color:#5C5F66; margin:0; } .ds-project span { color:#C8402F; font-weight:600; font-size:14px; } .ds-project:hover strong { color:#A33323; }"
     },
     {
-      "name": "幕名木牌（当前态）",
+      "name": "语言切换",
       "kind": "nav",
-      "refersTo": "act-tag-active",
-      "description": "顶部挂帘式导航的激活项：绢底墨字加朱砂穗。",
-      "html": "<button class=\"ds-act-tag\" aria-current=\"true\"><span class=\"ds-tassel\"></span>开场</button>",
-      "css": ".ds-act-tag { position:relative; appearance:none; border:0; cursor:pointer; font-family:'Noto Serif SC',serif; font-weight:600; letter-spacing:0.3em; font-size:15px; padding:12px 5px 14px; border-radius:3px; color:#241a10; background:linear-gradient(180deg,#fbf3dd,#ddc9a0); border:1px solid #ddc9a0; box-shadow:0 4px 14px rgba(0,0,0,0.45); } .ds-tassel { position:absolute; left:50%; bottom:-10px; transform:translateX(-50%); width:5px; height:8px; border-radius:2px; background:#bf3524; } .ds-act-tag:focus-visible { outline:2px solid #e8a33d; outline-offset:3px; }"
-    },
-    {
-      "name": "戏单行",
-      "kind": "card",
-      "refersTo": "playbill-row",
-      "description": "节目单式项目行：剧名/剧种签/戏文/外链箭头。",
-      "html": "<div class=\"ds-play\"><a class=\"ds-play-name\" href=\"#\">gotato</a><span class=\"ds-play-genre\">Go</span><span class=\"ds-play-note\">Go 原生的 Agent 服务</span><span class=\"ds-play-arrow\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 16 16\"><path d=\"M4,12 L12,4 M5.5,4 H12 V10.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></div>",
-      "css": ".ds-play { display:flex; align-items:baseline; gap:14px; padding:12px 2px; border-bottom:1px solid rgba(107,83,53,0.35); transition:background .25s ease, transform .25s ease; } .ds-play:hover { background:rgba(232,163,61,0.12); transform:translateX(8px); } .ds-play-name { font-family:'Noto Serif SC',serif; font-weight:600; font-size:17px; color:#241a10; text-decoration:none; min-width:8.5em; } .ds-play-genre { font-size:11px; letter-spacing:0.12em; color:#6b5335; border:1px solid rgba(107,83,53,0.45); border-radius:2px; padding:2px 6px; } .ds-play-note { font-family:'Kaiti SC','STKaiti',serif; font-size:14px; color:#45351f; flex:1; } .ds-play-arrow { color:#6b5335; display:inline-flex; }"
+      "refersTo": "language-switch",
+      "description": "CN / EN 双语切换；浏览器语言默认，用户选择持久化。",
+      "html": "<div class=\"ds-language\"><button aria-pressed=\"true\">中</button><span>/</span><button aria-pressed=\"false\">EN</button></div>",
+      "css": ".ds-language { display:inline-flex; align-items:center; color:#E6E4DE; } .ds-language button { min-width:31px; min-height:44px; border:0; background:transparent; color:#8A8D94; font:500 12px 'Geist Mono',monospace; } .ds-language button[aria-pressed='true'] { color:#17181C; }"
     }
   ],
   "narrative": {
-    "northStar": "一堂被灯点亮的皮影戏",
-    "overview": "整个系统是一座戏台：页面地面是深夜的堂屋，中央一方被灯光从背后打亮的米色绢幕承载全部内容，墨色皮影人偶以竹签操纵、随访客光标起舞。朱砂红是唯一的强调色，只在印、绦带、主按钮、活动幕牌上出现。所有文案使用戏团体例：标题是幕名，说明是舞台指示（圆括号楷体）。",
-    "keyCharacteristics": [
-      "内容永远住在发光的绢幕上，夜堂只做包裹与留白",
-      "皮影是可动资产（SVG 关节 + CSS 变量驱动），不是插图",
-      "中文竖排在桌面端承担展示层；移动端全部转为横排文档流"
-    ],
-    "rules": [
-      { "name": "The 朱砂十成一 Rule", "body": "朱砂只给印记级元素（印、绦带、主 CTA、当前幕）。它是戳记，不是涂装。", "section": "colors" },
-      { "name": "The 括号即旁白 Rule", "body": "圆括号 + 楷体 = 舞台指示声部，专用于占位与氛围句。", "section": "typography" }
-    ],
-    "dos": ["让新内容住进幕结构，一区块一幕一姿势", "占位与未定内容用楷体括号标注待补"],
-    "donts": ["不引入冷灰色", "不给皮影或文字加发光/霓虹效果", "不用 emoji/字符当图标", "不在夜堂区域放内容卡片"]
+    "northStar": "The Minimal Professional Index（极简专业索引）",
+    "overview": "这是身份页，不是营销页。页面只回答四个问题：你是谁、做什么、做过什么、如何联系。技术关键词带提供密度，项目清单提供证据；任何不能回答这四个问题的图片、卡片、占位或动效都不出现。",
+    "keyCharacteristics": ["暖纸底、墨字、发丝线、单一朱砂", "文字优先 Hero 与项目清单", "CN / EN 切换且选择持久化", "无图片、无 Bento、无空履历"],
+    "rules": [{ "name": "The One Accent Rule", "body": "朱砂只承担链接与分隔点；没有第二强调色。", "section": "colors" }, { "name": "The Mono Is Metadata Rule", "body": "等宽字只呈现技术分类或联系数据。", "section": "typography" }],
+    "dos": ["只展示真实可验证的项目和联系信息", "每条可见文案同时维护 CN 与 EN", "用项目清单展示工程工作"],
+    "donts": ["不添加随机图片、Bento 或项目卡片", "不展示空履历或虚构推荐语", "不用 slogan 替代普通自我介绍", "不加无信息装饰框"]
   }
 }

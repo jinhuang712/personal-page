@@ -31,7 +31,7 @@
       "kind": "custom",
       "refersTo": "project-row",
       "description": "项目身份、说明、GitHub 链接的发丝线清单行。",
-      "html": "<a class=\"ds-project\" href=\"#\"><div><strong>gotato</strong><small>Go · Agent Runtime</small></div><p>A Go-native Agent-as-a-Service runtime with a compact kernel and a canonical agent loop.</p><span>GitHub ↗</span></a>",
+      "html": "<a class=\"ds-project\" href=\"#\"><div><strong>pi-view</strong><small>TypeScript · Pi Extension</small></div><p>A Pi extension that gives text-only models an explicit view tool and routes images to a vision model.</p><span>GitHub ↗</span></a>",
       "css": ".ds-project { min-height:122px; display:grid; grid-template-columns:minmax(160px,.85fr) minmax(0,2fr) auto; gap:28px; align-items:center; padding:24px 0; border-bottom:1px solid #E6E4DE; color:#17181C; text-decoration:none; font-family:Geist,'Noto Sans SC',sans-serif; } .ds-project small { display:block; margin-top:3px; color:#8A8D94; font:12px 'Geist Mono',monospace; } .ds-project p { color:#5C5F66; margin:0; } .ds-project span { color:#C8402F; font-weight:600; font-size:14px; } .ds-project:hover strong { color:#A33323; }"
     },
     {

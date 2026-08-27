@@ -34,7 +34,7 @@ Delegated（用户授权）：纯静态 HTML/CSS/JavaScript，无构建步骤，
 
 - 纯静态；联系走 mailto、GitHub、LinkedIn。
 - 单页锚点导航：Hero → 技术关键词带 → 项目清单 → 联系。
-- 项目清单展示当前全部 19 个非 Fork 公开仓库；按 GitHub 仓库体量与最近代码推送时间综合排序。
+- 项目清单展示 15 个精选公开项目；Fork 与明确不对外展示的仓库不列出，项目按仓库体量与最近代码推送时间综合排序。
 - 移动端 360px 起必须无横向溢出；桌面端和移动端均经过截图及 DOM 几何验证。
 - 未确认的经历、教育、简历、推荐语一律不显示，绝不以占位或虚构内容上线。
 
@@ -47,7 +47,7 @@ Delegated（用户授权）：纯静态 HTML/CSS/JavaScript，无构建步骤，
 ## Evidence on Hand
 
 - 姓名：黄锦（Huang Jin）、邮箱 huangjin712@qq.com、GitHub @jinhuang712、LinkedIn linkedin.com/in/jinhuang712 —— 已验证。
-- 仓库清单：GitHub API 已核对 19 个非 Fork 公开仓库；包含 gotato、jsonita、pi-view、ant-agent、smart-cutout，以及 Claude Code、DSH、OpenCode 与 Pi 相关工具。
+- 仓库清单：展示 15 个精选公开项目；涵盖 Jsonita、Pi 扩展、DeepSeek Harness、Claude Code、Codex 与 Pivi 相关工具。
 - 技术关键词：Go、TypeScript、Swift、Python、Shell、macOS、AI Agents、Agent Runtime、Developer Tools、CLI、Extensions、Automation、Open Source、Developer Experience、Code Intelligence、Tooling。
 
 ## Product Principles

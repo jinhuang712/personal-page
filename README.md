@@ -38,7 +38,9 @@ js/main.js → const copy = { zh: ..., en: ... }
 
 1. 在 `index.html` 的 `.project-list` 新增一条 `.project-row`；
 2. 在 `js/main.js` 的 `zh.projects` 与 `en.projects` 均补上对应的 `meta` / `desc`；
-3. 按 GitHub 的仓库体量和 `pushed_at` 更新 `projectOrder`。Fork 不展示。
+3. 按 GitHub 的仓库体量和 `pushed_at` 更新 `projectOrder`。
+
+项目清单是精选展示：Fork 与明确不对外展示的仓库不列出。
 
 未确认的经历、教育、推荐语和简历不要以占位内容发布；有真实内容后再加区块。
 

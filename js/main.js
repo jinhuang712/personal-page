@@ -16,10 +16,9 @@
         terms: ['Go', 'TypeScript', 'Swift', 'Python', 'Shell', 'macOS', 'AI 智能体', 'Agent Runtime', '开发者工具', 'CLI', '插件', '自动化', '开源', '开发者体验', 'Code Intelligence', 'Tooling']
       },
       projects: {
-        aria: '公开仓库',
-        title: '公开仓库',
-        lead: '以下为我 GitHub 上创建的公开仓库，按代码体量与最近推送综合排序。',
-        gotato: { meta: 'Go · Agent Runtime', desc: 'Go 原生的 Agent-as-a-Service 运行时，提供紧凑内核与规范 Agent 循环。' },
+        aria: '开源项目',
+        title: '开源项目',
+        lead: '以下项目按代码体量与最近推送综合排序。',
         jsonita: { meta: 'TypeScript · macOS / Windows', desc: 'macOS 与 Windows 菜单栏 JSON 工具箱：格式化、树状预览、转换与 AI 辅助修复。' },
         'pi-view': { meta: 'TypeScript · Pi Extension', desc: '为纯文本模型提供显式 view 工具，并把图像路由给视觉模型的 Pi 扩展。' },
         'ant-agent': { meta: 'Shell · Agents', desc: '一次性子代理集合，把临时调查任务隔离在主上下文之外。' },
@@ -31,10 +30,7 @@
         'dsh-session-link': { meta: 'JavaScript · DSH Plugin', desc: 'DeepSeek Harness 插件：链接并读取 DSH 会话，将会话内容转为可读文本。' },
         'dsh-survey': { meta: 'JavaScript · DSH Plugin', desc: 'DeepSeek Harness 批量问卷插件，支持多种问题类型与提交后的回顾。' },
         'go-learning': { meta: 'HTML · Go Learning', desc: '面向资深 Java 工程师的 Go 进阶学习路径，提供 Java 对照、可运行示例与练习。' },
-        'homebrew-jsonita': { meta: 'Ruby · Homebrew Tap', desc: 'Jsonita 的 Homebrew Tap，用于安装 macOS 菜单栏 JSON 工具箱。' },
-        'oc-image-router': { meta: 'JavaScript · OpenCode Plugin', desc: 'OpenCode 插件：自动保存粘贴图片，并为不支持图像输入的模型路由至视觉子代理。' },
         'page-snap': { meta: 'JavaScript · Chrome Extension', desc: 'Chrome 扩展：将网页保存为保真、可供 AI 阅读的 MHTML、单页 HTML 或 ZIP 归档。' },
-        'personal-page': { meta: 'HTML · CSS · JavaScript', desc: 'huangjin.online 的静态源代码。' },
         'pi-briefly': { meta: 'TypeScript · Pi Extension', desc: '以原生方式紧凑、折叠展示工具调用的 Pi 扩展。' },
         'pi-x-footer': { meta: 'TypeScript · Pi Extension', desc: '可配置的 Pi 多行 Footer，提供本地指标、语义化展示、交互设置及可选的服务商用量监控。' },
         pivi: { meta: 'TypeScript · Tauri / React / Rust', desc: '面向电竞开黑场景的桌面语音应用，基于 Tauri、React 与 Rust，采用本地优先架构。' }
@@ -55,10 +51,9 @@
         terms: ['Go', 'TypeScript', 'Swift', 'Python', 'Shell', 'macOS', 'AI Agents', 'Agent Runtime', 'Developer Tools', 'CLI', 'Extensions', 'Automation', 'Open Source', 'Developer Experience', 'Code Intelligence', 'Tooling']
       },
       projects: {
-        aria: 'Public repositories',
-        title: 'Public repositories',
-        lead: 'Public repositories I created on GitHub, ranked by codebase size and recent pushes.',
-        gotato: { meta: 'Go · Agent Runtime', desc: 'A Go-native Agent-as-a-Service runtime with a compact kernel and a canonical agent loop.' },
+        aria: 'Open-source projects',
+        title: 'Open-source projects',
+        lead: 'Projects ranked by codebase size and recent pushes.',
         jsonita: { meta: 'TypeScript · macOS / Windows', desc: 'A menu-bar JSON toolkit for macOS and Windows: formatting, tree inspection, conversion, and AI-assisted fixing.' },
         'pi-view': { meta: 'TypeScript · Pi Extension', desc: 'A Pi extension that gives text-only models an explicit view tool and routes images to a vision model.' },
         'ant-agent': { meta: 'Shell · Agents', desc: 'A disposable subagent collection that keeps one-off investigations out of the main context.' },
@@ -70,10 +65,7 @@
         'dsh-session-link': { meta: 'JavaScript · DSH Plugin', desc: 'A DeepSeek Harness plugin for linking to and reading DSH sessions as readable text.' },
         'dsh-survey': { meta: 'JavaScript · DSH Plugin', desc: 'A DeepSeek Harness questionnaire plugin for batch questions, multiple input types, and post-submit recap.' },
         'go-learning': { meta: 'HTML · Go Learning', desc: 'An advanced Go learning path for experienced Java engineers, with Java comparisons and runnable examples.' },
-        'homebrew-jsonita': { meta: 'Ruby · Homebrew Tap', desc: 'A Homebrew tap for Jsonita, the menu-bar JSON toolkit for macOS.' },
-        'oc-image-router': { meta: 'JavaScript · OpenCode Plugin', desc: 'An OpenCode plugin that saves pasted images and routes image-less models to a vision-capable subagent.' },
         'page-snap': { meta: 'JavaScript · Chrome Extension', desc: 'A Chrome extension that saves pages as faithful, AI-readable MHTML, single HTML, or ZIP archives.' },
-        'personal-page': { meta: 'HTML · CSS · JavaScript', desc: 'Source for huangjin.online.' },
         'pi-briefly': { meta: 'TypeScript · Pi Extension', desc: 'A native-first Pi extension for compact, collapsed tool presentation.' },
         'pi-x-footer': { meta: 'TypeScript · Pi Extension', desc: 'A configurable multi-row Pi footer with local metrics, semantic presentation, interactive settings, and optional provider-usage monitoring.' },
         pivi: { meta: 'TypeScript · Tauri / React / Rust', desc: 'A local-first desktop voice application for gaming groups, built with Tauri, React, and Rust.' }
@@ -88,9 +80,9 @@
   var projectList = document.querySelector('.project-list');
   var projectOrder = [
     'pi-x-footer', 'pi-view', 'dsh-survey', 'dsh-session-link', 'ant-agent',
-    'pi-briefly', 'gotato', 'jsonita', 'personal-page', 'page-snap', 'pivi',
-    'oc-image-router', 'claude-code-qna', 'smart-cutout', 'claude-code-queue',
-    'go-learning', 'claude-code-clip', 'homebrew-jsonita', 'atom-language-assembly-y86-64'
+    'pi-briefly', 'jsonita', 'page-snap', 'pivi', 'claude-code-qna',
+    'smart-cutout', 'claude-code-queue', 'go-learning', 'claude-code-clip',
+    'atom-language-assembly-y86-64'
   ];
   var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-locale]'));
 

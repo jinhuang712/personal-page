@@ -1,78 +1,54 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-28T02:20:00+08:00",
+  "generatedAt": "2026-08-28T03:10:00+08:00",
   "title": "Design System: 黄锦 Huang Jin · 个人主页 v2",
   "extensions": {
     "colorMeta": {
       "accent": { "role": "primary", "displayName": "朱砂 Accent", "canonical": "#C8402F" },
       "ink": { "role": "primary", "displayName": "墨 Ink", "canonical": "#17181C" },
-      "bg": { "role": "neutral", "displayName": "纸底 BG", "canonical": "#F7F6F3" },
-      "panel": { "role": "neutral", "displayName": "深墨面板 Panel", "canonical": "#191B20" }
+      "bg": { "role": "neutral", "displayName": "纸底", "canonical": "#F7F6F3" },
+      "panel": { "role": "neutral", "displayName": "联系面板", "canonical": "#191B20" }
     },
-    "shadows": [
-      { "name": "card", "value": "0 2px 6px rgba(23,24,28,0.05)", "purpose": "卡片静置投影" },
-      { "name": "lift", "value": "0 14px 34px rgba(23,24,28,0.10)", "purpose": "hover 升起投影" },
-      { "name": "panel-glow", "value": "radial-gradient(70% 90% at 88% 8%, rgba(200,64,47,0.22), transparent 55%)", "purpose": "联系面板朱砂辉光，全页唯一光晕" }
-    ],
     "motion": [
-      { "name": "entrance", "value": "gsap from y:26 opacity:0 0.8s power3.out (ScrollTrigger once)", "purpose": "区块一次性入场" },
-      { "name": "image-scale-fade", "value": "gsap fromTo scale 0.82->1 (enter), opacity->0.22 + brightness 0.75 (exit), scrub 0.6", "purpose": "作品图滚动缩放与淡出" },
-      { "name": "hover-physics", "value": "translateY(-5px) + shadow-lift, 0.5s cubic-bezier(0.22,1,0.36,1)", "purpose": "卡片与按钮悬停物理" },
-      { "name": "marquee", "value": "translateX(-50%) 30s linear infinite", "purpose": "技术栈无限滚带" }
+      { "name": "marquee", "value": "translateX(-50%) 48s linear infinite", "purpose": "16 个技术关键词的无缝滚动；reduced-motion 时静止。" },
+      { "name": "nav", "value": "background and box-shadow 0.2s ease", "purpose": "固定导航滚动后的毛玻璃状态。" }
     ],
     "breakpoints": [
-      { "name": "tablet", "value": "1024px" },
       { "name": "mobile", "value": "640px" }
     ]
   },
   "components": [
     {
-      "name": "主按钮 Primary",
+      "name": "主按钮",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "墨底白字主行动钮，带右上箭头。",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\">查看作品 <svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\"><path d=\"M4,12 L12,4 M5.5,4 H12 V10.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
-      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:8px; font-family:Geist,'Noto Sans SC',sans-serif; font-weight:600; font-size:15px; text-decoration:none; border-radius:12px; padding:13px 24px; min-height:44px; background:#17181C; color:#fff; box-shadow:0 8px 20px rgba(23,24,28,0.18); transition:transform .25s cubic-bezier(0.22,1,0.36,1), box-shadow .25s ease; } .ds-btn-primary:hover { background:#000; transform:translateY(-2px); box-shadow:0 12px 26px rgba(23,24,28,0.22); } .ds-btn-primary:focus-visible { outline:2px solid #C8402F; outline-offset:3px; }"
+      "description": "深墨 GitHub 主行动按钮。",
+      "html": "<a class=\"ds-primary\" href=\"#\">GitHub</a>",
+      "css": ".ds-primary { display:inline-flex; align-items:center; min-height:44px; padding:13px 24px; border-radius:12px; background:#17181C; color:#fff; font:600 15px Geist,'Noto Sans SC',sans-serif; text-decoration:none; } .ds-primary:hover { background:#000; } .ds-primary:focus-visible { outline:2px solid #C8402F; outline-offset:3px; }"
     },
     {
-      "name": "幽灵按钮 Ghost",
-      "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "白底墨字发丝边次级按钮。",
-      "html": "<a class=\"ds-btn-ghost\" href=\"#\">GitHub</a>",
-      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; gap:8px; font-family:Geist,'Noto Sans SC',sans-serif; font-weight:600; font-size:15px; text-decoration:none; border-radius:12px; padding:13px 24px; min-height:44px; background:#fff; color:#17181C; border:1px solid #E6E4DE; transition:transform .25s cubic-bezier(0.22,1,0.36,1), border-color .2s ease; } .ds-btn-ghost:hover { border-color:#17181C; transform:translateY(-2px); } .ds-btn-ghost:focus-visible { outline:2px solid #C8402F; outline-offset:3px; }"
+      "name": "项目清单行",
+      "kind": "custom",
+      "refersTo": "project-row",
+      "description": "项目身份、说明、GitHub 链接的发丝线清单行。",
+      "html": "<a class=\"ds-project\" href=\"#\"><div><strong>gotato</strong><small>Go · Agent Runtime</small></div><p>A Go-native Agent-as-a-Service runtime with a compact kernel and a canonical agent loop.</p><span>GitHub ↗</span></a>",
+      "css": ".ds-project { min-height:122px; display:grid; grid-template-columns:minmax(160px,.85fr) minmax(0,2fr) auto; gap:28px; align-items:center; padding:24px 0; border-bottom:1px solid #E6E4DE; color:#17181C; text-decoration:none; font-family:Geist,'Noto Sans SC',sans-serif; } .ds-project small { display:block; margin-top:3px; color:#8A8D94; font:12px 'Geist Mono',monospace; } .ds-project p { color:#5C5F66; margin:0; } .ds-project span { color:#C8402F; font-weight:600; font-size:14px; } .ds-project:hover strong { color:#A33323; }"
     },
     {
-      "name": "Bento 卡片",
-      "kind": "card",
-      "refersTo": "card",
-      "description": "作品卡：标签胶囊 + 标题 + 描述 + 朱砂链接行；hover 物理升起。",
-      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-body\"><div class=\"ds-tags\"><span>Go</span><span>Agent Runtime</span></div><h3 class=\"ds-title\">gotato</h3><p class=\"ds-desc\">Go 原生的 Agent-as-a-Service：紧凑的运行时内核，一条规范的 Agent 循环。</p><span class=\"ds-link\">阅读源码 <svg width=\"13\" height=\"13\" viewBox=\"0 0 16 16\"><path d=\"M4,12 L12,4 M5.5,4 H12 V10.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></div></a>",
-      "css": ".ds-card { display:flex; flex-direction:column; background:#fff; border:1px solid #E6E4DE; border-radius:14px; overflow:hidden; text-decoration:none; box-shadow:0 2px 6px rgba(23,24,28,0.05); transition:transform .5s cubic-bezier(0.22,1,0.36,1), box-shadow .5s cubic-bezier(0.22,1,0.36,1), border-color .3s ease; } .ds-card:hover { transform:translateY(-5px); box-shadow:0 14px 34px rgba(23,24,28,0.10); border-color:rgba(200,64,47,0.35); } .ds-card-body { display:flex; flex-direction:column; gap:10px; padding:24px 26px; flex:1; } .ds-tags { display:flex; gap:8px; flex-wrap:wrap; } .ds-tags span { font-family:'Geist Mono',monospace; font-size:11.5px; letter-spacing:0.04em; color:#5C5F66; border:1px solid #E6E4DE; border-radius:999px; padding:3px 10px; } .ds-title { font-family:Geist,sans-serif; font-weight:700; font-size:1.4rem; letter-spacing:-0.01em; color:#17181C; } .ds-desc { color:#5C5F66; font-size:15px; line-height:1.7; } .ds-link { margin-top:auto; padding-top:10px; display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:600; color:#C8402F; }"
-    },
-    {
-      "name": "深面板按钮 Invert / Outline",
-      "kind": "button",
-      "refersTo": "button-invert",
-      "description": "深墨面板内的双按钮：纸底反白 + 透明描边。",
-      "html": "<div style=\"background:#191B20;padding:24px;border-radius:16px;display:flex;gap:14px\"><a class=\"ds-btn-invert\" href=\"#\">发邮件</a><a class=\"ds-btn-outline\" href=\"#\">GitHub</a></div>",
-      "css": ".ds-btn-invert { display:inline-flex; align-items:center; font-family:Geist,'Noto Sans SC',sans-serif; font-weight:600; font-size:15px; text-decoration:none; border-radius:12px; padding:13px 24px; min-height:44px; background:#F2F1EC; color:#17181C; box-shadow:0 10px 24px rgba(0,0,0,0.3); transition:transform .25s cubic-bezier(0.22,1,0.36,1); } .ds-btn-invert:hover { background:#fff; transform:translateY(-2px); } .ds-btn-outline { display:inline-flex; align-items:center; font-family:Geist,'Noto Sans SC',sans-serif; font-weight:600; font-size:15px; text-decoration:none; border-radius:12px; padding:13px 24px; min-height:44px; background:transparent; color:#F2F1EC; border:1px solid rgba(242,241,236,0.4); transition:transform .25s cubic-bezier(0.22,1,0.36,1), border-color .2s ease; } .ds-btn-outline:hover { border-color:rgba(242,241,236,0.9); transform:translateY(-2px); }"
+      "name": "语言切换",
+      "kind": "nav",
+      "refersTo": "language-switch",
+      "description": "CN / EN 双语切换；浏览器语言默认，用户选择持久化。",
+      "html": "<div class=\"ds-language\"><button aria-pressed=\"true\">中</button><span>/</span><button aria-pressed=\"false\">EN</button></div>",
+      "css": ".ds-language { display:inline-flex; align-items:center; color:#E6E4DE; } .ds-language button { min-width:31px; min-height:44px; border:0; background:transparent; color:#8A8D94; font:500 12px 'Geist Mono',monospace; } .ds-language button[aria-pressed='true'] { color:#17181C; }"
     }
   ],
   "narrative": {
-    "northStar": "The Calm Engineering Editorial（冷静工程编辑）",
-    "overview": "面向 recruiter、开发者同行与朋友的单页专业主页：recruiter 8 秒内扫完定位、作品与联系。纸感底色上以发丝线分章，Bento 矩阵承载作品证据，深墨面板收束行动。朱砂是唯一强调色，从锦字印章延续而来的身份锚点。",
-    "keyCharacteristics": [
-      "暖纸底 + 白卡面 + 发丝线分区，编辑风的留白与密度",
-      "单一朱砂强调：链接、主交互、关键点；稀有即分量",
-      "Geist + Noto Sans SC + Geist Mono（度量专用）",
-      "动效克制：GSAP 入场 + 作品图滚动缩放淡出；reduced-motion 全降级"
-    ],
-    "rules": [
-      { "name": "The 朱砂唯一 Rule", "body": "一屏内朱砂只出现在链接与一个主交互上。", "section": "colors" },
-      { "name": "The Mono 即度量 Rule", "body": "等宽字只承载真实数据，不做技术感装饰。", "section": "typography" }
-    ],
-    "dos": ["新区块沿用 72rem 容器 + clamp 节奏 + 发丝线", "占位用虚线骨架 + 待补明示", "真实数据用 Mono 胶囊或 now 行"],
-    "donts": ["不引入第二强调色或渐变文字", "不用 emoji/字符图标", "浅色区不用冷灰", "不加装饰彩蛋（皮影世界已退役）", "不编造经历、评价或数据"]
+    "northStar": "The Minimal Professional Index（极简专业索引）",
+    "overview": "这是身份页，不是营销页。页面只回答四个问题：你是谁、做什么、做过什么、如何联系。技术关键词带提供密度，项目清单提供证据；任何不能回答这四个问题的图片、卡片、占位或动效都不出现。",
+    "keyCharacteristics": ["暖纸底、墨字、发丝线、单一朱砂", "文字优先 Hero 与项目清单", "CN / EN 切换且选择持久化", "无图片、无 Bento、无空履历"],
+    "rules": [{ "name": "The One Accent Rule", "body": "朱砂只承担链接与分隔点；没有第二强调色。", "section": "colors" }, { "name": "The Mono Is Metadata Rule", "body": "等宽字只呈现技术分类或联系数据。", "section": "typography" }],
+    "dos": ["只展示真实可验证的项目和联系信息", "每条可见文案同时维护 CN 与 EN", "用项目清单展示工程工作"],
+    "donts": ["不添加随机图片、Bento 或项目卡片", "不展示空履历或虚构推荐语", "不用 slogan 替代普通自我介绍", "不加无信息装饰框"]
   }
 }

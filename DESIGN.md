@@ -1,6 +1,6 @@
 ---
 name: 黄锦 Huang Jin · 个人主页 v2
-description: 冷静工程编辑风——暖纸底、墨字、单一朱砂、发丝线分章
+description: 极简双语专业身份页——暖纸、墨字、朱砂、项目清单
 colors:
   bg: "#F7F6F3"
   surface: "#FFFFFF"
@@ -19,15 +19,6 @@ typography:
     fontSize: "clamp(3.25rem, 6vw, 5.25rem)"
     letterSpacing: "0.04em"
     lineHeight: 1.02
-  headline:
-    fontFamily: "Geist, Noto Sans SC, sans-serif"
-    fontWeight: 700
-    fontSize: "clamp(1.7rem, 3vw, 2.4rem)"
-  lead:
-    fontFamily: "Geist, Noto Sans SC, sans-serif"
-    fontWeight: 400
-    fontSize: "clamp(1.05rem, 1.6vw, 1.25rem)"
-    lineHeight: 1.7
   body:
     fontFamily: "Geist, Noto Sans SC, PingFang SC, sans-serif"
     fontWeight: 400
@@ -38,32 +29,26 @@ typography:
     fontWeight: 400
     fontSize: "12px-14px"
 rounded:
-  btn: "12px"
-  card: "14px"
-  contact: "24px"
+  button: "12px"
+  contact: "20px"
 spacing:
-  section: "clamp(88px, 12vw, 152px)"
+  section: "clamp(76px, 10vw, 128px)"
   container: "clamp(20px, 5vw, 48px)"
 components:
   button-primary:
     backgroundColor: "{colors.ink}"
     textColor: "#FFFFFF"
-    rounded: "{rounded.btn}"
+    rounded: "{rounded.button}"
     padding: "13px 24px"
   button-ghost:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.btn}"
+    rounded: "{rounded.button}"
     padding: "13px 24px"
   button-invert:
     backgroundColor: "{colors.paper-on-dark}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.btn}"
-    padding: "13px 24px"
-  button-outline:
-    backgroundColor: "transparent"
-    textColor: "{colors.paper-on-dark}"
-    rounded: "{rounded.btn}"
+    rounded: "{rounded.button}"
     padding: "13px 24px"
 ---
 
@@ -71,92 +56,80 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Calm Engineering Editorial"（冷静工程编辑）**
+**Creative North Star: "The Minimal Professional Index"（极简专业索引）**
 
-面向 recruiter、开发者同行与朋友的单页专业主页：recruiter 8 秒内扫完定位、作品与联系。纸感底色上以发丝线分章，Bento 矩阵承载作品证据，深墨面板收束行动。朱砂是唯一强调色，从「锦」字印章延续而来的身份锚点。
+这是身份页，不是营销页。页面只回答四个问题：你是谁、做什么、做过什么、如何联系。技术关键词带提供密度，项目清单提供证据；任何不能回答这四个问题的图片、卡片、占位或动效都不出现。
 
 **Key Characteristics:**
-- 暖纸底（#F7F6F3）+ 白卡面 + 发丝线分区，编辑风的留白与密度
-- 单一朱砂强调：链接、主交互、关键点；稀有即分量
-- Geist（拉丁）+ Noto Sans SC（中文）+ Geist Mono（年份/标签/度量）
-- 动效克制：GSAP 入场淡入 + 作品图滚动缩放淡出；reduced-motion 全降级
+- 暖纸底、墨字、1px 发丝线、单一朱砂链接色
+- 文字优先 Hero，只有 GitHub、LinkedIn 和邮箱三种主联系入口
+- 无图片、无 Bento、无项目卡片、无空履历
+- CN / EN 切换，浏览器语言默认、手动选择持久化
 
 ## Colors
 
-纸与墨的世界，朱砂只做戳记。
-
 ### Primary
-- **朱砂 Accent** (#C8402F)：链接、card-link、now-key、hover 边框。hover 深一档 #A33323。任何屏幕占比 ≤10%。
-- **墨 Ink** (#17181C)：正文与主按钮底；近黑但有蓝灰底色，不纯黑。
+- **朱砂 Accent** (#C8402F)：链接、项目 GitHub 入口、关键词圆点。仅此一色强调。
+- **墨 Ink** (#17181C)：姓名、标题、深色主按钮。
 
 ### Neutral
-- **纸底 BG** (#F7F6F3) / **卡面 Surface** (#FFFFFF)：双色阶地面。
-- **次级 Ink-2** (#5C5F66)：正文次级，对比 5.9:1。**禁用冷灰系**，一律此暖灰。
-- **弱级 Ink-3** (#8A8D94)：仅限大号装饰字（marquee 26px）与占位骨架。
-- **发丝线 Hairline** (#E6E4DE)：全部分区线与卡片描边。
-- **深墨面板 Panel** (#191B20) + **纸色前景** (#F2F1EC)：联系面板的色彩反转章节。
+- **纸底** (#F7F6F3)：全页地面。
+- **白面** (#FFFFFF)：仅 Ghost 按钮使用，不做卡片。
+- **次级正文** (#5C5F66)：所有说明文字。
+- **弱级文字** (#8A8D94)：项目 meta、技术带。
+- **发丝线** (#E6E4DE)：导航、关键词带、项目行分隔。
+- **深墨面板** (#191B20) / **纸色前景** (#F2F1EC)：联系区色彩反转。
 
 ### Named Rules
-**The 朱砂唯一 Rule.** 一屏内朱砂只出现在链接与一个主交互上；出现第二处强调色即为设计错误。
+**The One Accent Rule.** 朱砂只承担链接与分隔点；没有第二强调色，也没有渐变文字。
 
 ## Typography
 
-**Display:** Geist + Noto Sans SC 700；**Body:** 同族 400；**Mono:** Geist Mono（度量专用，不做装饰）
+**Display / Body:** Geist + Noto Sans SC；**Measurement:** Geist Mono。
 
-### Hierarchy
-- **Display** (700, clamp(3.25rem, 6vw, 5.25rem))：仅 hero 姓名「黄锦」。
-- **Headline** (700, clamp(1.7rem, 3vw, 2.4rem))：分区标题。
-- **Lead** (400, clamp(1.05rem, 1.6vw, 1.25rem), 1.7)：hero 定位句，≤30em。
-- **Body** (400, 16px, 1.7)：正文，≤42em 行长。
-- **Mono** (400-500, 11.5-14px)：标签、年份、域名、邮箱——只承载真实度量。
+- **Display** (700, clamp(3.25rem, 6vw, 5.25rem))：仅姓名。
+- **Body** (400, 16px, 1.7)：简介和项目描述。
+- **Mono** (12-14px)：项目技术 meta、邮箱、语言切换。
 
-### Named Rules
-**The Mono 即度量 Rule.** Geist Mono 只用于真实数据（年份、域名、邮箱、技术标签）；用等宽字扮演"技术感"是禁手。
+**The Mono Is Metadata Rule.** 等宽字只呈现技术分类或联系数据，不制造虚假的技术氛围。
 
 ## Layout
 
-72rem 容器，分区纵向节奏 clamp(88px, 12vw, 152px)。Hero 为文字优先的宽版构图：姓名、定位、双 CTA 与邮箱信息限定在 54rem 阅读宽度内；右侧无装饰性图框，避免无信息的首屏占位。作品区为 6 列 `grid-auto-flow: dense` Bento：主推卡 4列×2行，次卡 2列，三卡行 3+3——数学上零空洞；≤1024px 两列、≤640px 单列。所有触摸目标 ≥44px。
+容器宽度 72rem，横向内距 clamp(20px, 5vw, 48px)。首屏内容最大 54rem，信息按姓名 → 简介 → 按钮 → 邮箱排列。技术关键词带之后直接进入项目清单。
+
+项目列表桌面端为三列：项目身份 / 描述 / GitHub；移动端折为项目身份与链接同一行、描述占满下一行。每行由 1px 发丝线分开，不使用卡片容器。移动端起点 360px，页面禁止横向溢出。
 
 ## Elevation & Depth
 
-浅色区以 hairline 描边 + 极淡投影（0 2px 6px 5%）分层，hover 升起至 0 14px 34px 10%；深墨联系面板用径向朱砂辉光（22% 透明度）做氛围，是全页唯一允许的"光晕"。
-
-### Shadow Vocabulary
-- **card** (`0 2px 6px rgba(23,24,28,.05)`)：卡片静置。
-- **lift** (`0 14px 34px rgba(23,24,28,.10)`)：卡片/按钮 hover。
-- **panel-glow** (radial rgba(200,64,47,.22))：联系面板专属。
+页面默认无阴影。深度只来自联系区的墨色反转、按钮描边和固定导航的毛玻璃背景；项目行没有浮起、缩放或阴影状态。
 
 ## Shapes
 
-圆角阶梯：按钮 12 / 卡片 14 / 联系面板 24。标签为 999px 胶囊。分隔一律 1px 发丝线，不用阴影线或粗边框。
+按钮圆角 12px，联系面板圆角 20px；所有其他内容保持直线与发丝边。关键词圆点为唯一圆形装饰。
 
 ## Components
 
+### Navigation and Language Switch
+固定顶栏：品牌、项目、联系、CN / EN、GitHub。语言按钮最小高度 44px；选择状态只改变文字颜色。首次按浏览器语言选择，手动选择写入 `hj-locale` localStorage。
+
+### Project Index
+可点击的整行项目条目：项目名与 Mono meta 在左、说明居中、GitHub 链接在右；移动端自然折行。hover 只把项目名转为 Accent，不位移、不缩放。
+
+### Keyword Marquee
+16 个真实技术关键词，两份等长序列保证无缝循环。48 秒线性滚动；`prefers-reduced-motion` 时静止。
+
 ### Buttons
-墨底白字（primary）、白底墨字（ghost）、纸底墨字（invert，深面板内）、透明纸边（outline，深面板内）。统一 12px 圆角、13px×24px 内距、44px 最小高度、右上箭头 SVG。
-
-### 卡片（Bento Card）
-白卡面 + 发丝边 + 静置淡投影；hover：上浮 5px、投影加深、边框染朱砂 35%、图片 scale(1.05)、箭头位移动画。媒体带 aspect 21/10，图带灰度滤镜（grayscale .5）保持编辑感。标签行：Mono 胶囊。
-
-### 导航
-固定顶栏，滚动 24px 后加毛玻璃纸底 + 发丝下边线。左品牌（朱砂方点 + 姓名），右锚点链接 + GitHub 图标；链接触摸区 ≥44px。
-
-### 时间线 / 现在区
-行式结构：Mono 年份列（88px）+ 内容卡；占位条目用虚线边框 + 弱色文字，明确"待补"而不伪装完成。
-
-### 无限滚带（Marquee）
-发丝线上下夹住的大号技术词滚带（26px, Ink-3），朱砂圆点分隔；30s 线性循环，reduced-motion 静止。
+Hero：深墨 GitHub 主按钮 + 白底 LinkedIn 次按钮。联系区：纸底邮件按钮。所有按钮最小高度 44px，焦点状态为 2px Accent outline。
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** 新区块沿用 72rem 容器 + clamp 纵向节奏 + 发丝线分区。
-- **Do** 占位内容用虚线骨架 + 「待补」明示，保持诚实。
-- **Do** 真实数据（项目、年份、链接）放 Mono 胶囊或 now 行。
+- **Do** 只展示真实、可验证的项目和联系信息。
+- **Do** 为每一条可翻译的可见文案同时维护 CN 与 EN。
+- **Do** 用项目清单而不是卡片展示工程工作。
 
 ### Don't:
-- **Don't** 引入第二强调色或渐变文字；朱砂之外只有墨阶。
-- **Don't** 用 emoji/字符图标；箭头一律 `#arrow` 形状的描边 SVG。
-- **Don't** 在浅色区使用冷灰（#888/#999 系），次级文字只用 #5C5F66。
-- **Don't** 添加装饰彩蛋、隐喻包装（旧皮影世界已退役）。
-- **Don't** 编造经历、评价或数据；未确认信息一律占位标注。
+- **Don't** 添加随机图片、作品大图、Bento、轮播或项目卡片。
+- **Don't** 展示空履历、待补教育或虚构推荐语。
+- **Don't** 用 slogan 替代普通自我介绍。
+- **Don't** 引入第二强调色、渐变字或无信息的装饰框。

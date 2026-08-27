@@ -46,7 +46,7 @@ Delegated（用户授权）：纯静态 HTML/CSS/JS + GSAP（CDN），无构建�
 
 ## Evidence on Hand
 
-- 姓名：黄锦（Huang Jin）、邮箱 huangjin712@qq.com、GitHub @jinhuang712 —— 已验证。
+- 姓名：黄锦（Huang Jin）、邮箱 huangjin712@qq.com、GitHub @jinhuang712、LinkedIn linkedin.com/in/jinhuang712 —— 已验证。
 - 真实开源项目（描述取自其仓库 README）：gotato（Go Agent 运行时）、jsonita（macOS JSON 工具箱）、pi-view（Pi 视觉扩展）、ant-agent（子代理蜂群）、smart-cutout（Swift 抠图）。
 - 技术栈（从仓库统计）：Go、TypeScript、Swift、Python、Shell、macOS。
 - **未知/待确认（不得编造）**：职业定位一句话的正式表述、公司经历、教育经历、简历 PDF、真实评价引言、双语需求。

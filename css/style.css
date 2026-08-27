@@ -161,7 +161,6 @@ a { color: inherit; }
   font-size: 13px;
 }
 .hero-mail a:hover { text-decoration: underline; text-underline-offset: 4px; }
-
 /* 右侧视觉面板：深墨 + 网格渐变 + 印章 */
 .hero-visual { display: flex; justify-content: flex-end; }
 .hero-panel {

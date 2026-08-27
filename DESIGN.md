@@ -1,165 +1,163 @@
 ---
-name: 皮影戏台 · huangjin.online
-description: 黄锦的个人主页——一座夜堂里被灯点亮的皮影戏台
+name: 黄锦 Huang Jin · 个人主页 v2
+description: 冷静工程编辑风——暖纸底、墨字、单一朱砂、发丝线分章
 colors:
-  room: "#171008"
-  room-2: "#251a0c"
-  wood: "#3a2a18"
-  wood-hi: "#54391d"
-  silk: "#f0e4c8"
-  silk-hi: "#fbf3dd"
-  silk-lo: "#ddc9a0"
-  ink: "#241a10"
-  ink-2: "#45351f"
-  ink-soft: "#6b5335"
-  seal: "#bf3524"
-  seal-hi: "#d94a30"
-  amber: "#e8a33d"
-  bamboo: "#7a5c35"
-  cream: "#e9dcb8"
-  cream-dim: "#b9a87f"
+  bg: "#F7F6F3"
+  surface: "#FFFFFF"
+  ink: "#17181C"
+  ink-2: "#5C5F66"
+  ink-3: "#8A8D94"
+  hairline: "#E6E4DE"
+  accent: "#C8402F"
+  accent-deep: "#A33323"
+  panel: "#191B20"
+  paper-on-dark: "#F2F1EC"
 typography:
   display:
-    fontFamily: "'Noto Serif SC', 'Songti SC', 'STSong', serif"
-    fontWeight: 900
-    fontSize: "clamp(56px, 11vh, 104px)"
-    letterSpacing: "0.18em"
-    lineHeight: 1
+    fontFamily: "Geist, Noto Sans SC, PingFang SC, sans-serif"
+    fontWeight: 700
+    fontSize: "clamp(3.25rem, 6vw, 5.25rem)"
+    letterSpacing: "0.04em"
+    lineHeight: 1.02
   headline:
-    fontFamily: "'Noto Serif SC', 'Songti SC', serif"
-    fontWeight: 900
-    fontSize: "clamp(24px, 4.6vh, 38px)"
-    letterSpacing: "0.06em"
+    fontFamily: "Geist, Noto Sans SC, sans-serif"
+    fontWeight: 700
+    fontSize: "clamp(1.7rem, 3vw, 2.4rem)"
   lead:
-    fontFamily: "'Noto Serif SC', serif"
-    fontWeight: 600
-    fontSize: "clamp(22px, 4.4vh, 40px)"
-    lineHeight: 1.4
+    fontFamily: "Geist, Noto Sans SC, sans-serif"
+    fontWeight: 400
+    fontSize: "clamp(1.05rem, 1.6vw, 1.25rem)"
+    lineHeight: 1.7
   body:
-    fontFamily: "'Noto Serif SC', serif"
-    fontWeight: 500
-    fontSize: "clamp(14px, 2.1vh, 17px)"
-    lineHeight: 1.9
-  stage-direction:
-    fontFamily: "'Kaiti SC', 'STKaiti', 'KaiTi', 'Noto Serif SC', serif"
-    fontWeight: 500
-    fontSize: "clamp(13px, 2vh, 16px)"
-    letterSpacing: "0.08em"
+    fontFamily: "Geist, Noto Sans SC, PingFang SC, sans-serif"
+    fontWeight: 400
+    fontSize: "16px"
+    lineHeight: 1.7
+  mono:
+    fontFamily: "Geist Mono, ui-monospace, SF Mono, monospace"
+    fontWeight: 400
+    fontSize: "12px-14px"
 rounded:
-  sm: "3px"
-  md: "4px"
-  screen: "10px"
+  btn: "12px"
+  card: "14px"
+  panel: "20px"
+  contact: "24px"
 spacing:
-  xs: "8px"
-  sm: "14px"
-  md: "22px"
-  lg: "clamp(24px, 6%, 84px)"
+  section: "clamp(88px, 12vw, 152px)"
+  container: "clamp(20px, 5vw, 48px)"
 components:
-  button-seal:
-    backgroundColor: "{colors.seal}"
-    textColor: "{colors.silk-hi}"
-    rounded: "{rounded.md}"
-    padding: "12px 22px"
+  button-primary:
+    backgroundColor: "{colors.ink}"
+    textColor: "#FFFFFF"
+    rounded: "{rounded.btn}"
+    padding: "13px 24px"
   button-ghost:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.btn}"
+    padding: "13px 24px"
+  button-invert:
+    backgroundColor: "{colors.paper-on-dark}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.btn}"
+    padding: "13px 24px"
+  button-outline:
     backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
-    padding: "12px 22px"
-  act-tag-active:
-    backgroundColor: "{colors.silk-hi}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.sm}"
-  act-tag-idle:
-    backgroundColor: "#45311790"
-    textColor: "{colors.cream-dim}"
-    rounded: "{rounded.sm}"
+    textColor: "{colors.paper-on-dark}"
+    rounded: "{rounded.btn}"
+    padding: "13px 24px"
 ---
 
-# Design System: 皮影戏台 · huangjin.online
+# Design System: 黄锦 Huang Jin · 个人主页 v2
 
 ## Overview
 
-**Creative North Star: "一堂被灯点亮的皮影戏"**
+**Creative North Star: "The Calm Engineering Editorial"（冷静工程编辑）**
 
-整个系统是一座戏台：页面地面是深夜的堂屋，中央一方被灯光从背后打亮的米色绢幕承载全部内容，墨色皮影人偶以竹签操纵、随访客光标起舞。朱砂红是唯一的强调色，只在印、绦带、主按钮、活动幕牌上出现——它的稀有就是它的分量。所有文案使用戏团体例：标题是幕名，说明是舞台指示（圆括号楷体）。
+面向 recruiter、开发者同行与朋友的单页专业主页：recruiter 8 秒内扫完定位、作品与联系。纸感底色上以发丝线分章，Bento 矩阵承载作品证据，深墨面板收束行动。朱砂是唯一强调色，从「锦」字印章延续而来的身份锚点。
 
 **Key Characteristics:**
-- 内容永远住在发光的绢幕上，夜堂只做包裹与留白
-- 皮影是可动资产（SVG 关节 + CSS 变量驱动），不是插图
-- 中文竖排在桌面端承担展示层；移动端全部转为横排文档流
+- 暖纸底（#F7F6F3）+ 白卡面 + 发丝线分区，编辑风的留白与密度
+- 单一朱砂强调：链接、主交互、关键点；稀有即分量
+- Geist（拉丁）+ Noto Sans SC（中文）+ Geist Mono（年份/标签/度量）
+- 动效克制：GSAP 入场淡入 + 作品图滚动缩放淡出；reduced-motion 全降级
 
 ## Colors
 
-色板来自夜堂的物质世界：木、绢、墨、朱砂、灯。
+纸与墨的世界，朱砂只做戳记。
 
 ### Primary
-- **朱砂 Seal** (#bf3524)：印、绦带、主按钮、活动指示。hover 提亮为 #d94a30。全场 ≤10% 面积。
-- **绢 Silk** (#f0e4c8)：内容面板基色；中心高光 #fbf3dd、边缘暗部 #ddc9a0 由径向渐变产生"灯从背后打亮"。
+- **朱砂 Accent** (#C8402F)：链接、card-link、now-key、hover 边框。hover 深一档 #A33323。任何屏幕占比 ≤10%。
+- **墨 Ink** (#17181C)：正文与主按钮底；近黑但有蓝灰底色，不纯黑。
 
 ### Neutral
-- **夜堂 Room** (#171008 / #251a0c)：页面地面，径向渐变给出台口微光。
-- **木 Wood** (#3a2a18 / #54391d)：台框、横梁、木牌基色。
-- **墨 Ink** (#241a10 / #45351f)：绢上的正文与皮影本体；次级文字 #6b5335（暖棕，禁用冷灰）。
-- **堂内浅字 Cream** (#e9dcb8 / #b9a87f)：夜堂里的落款文字。
+- **纸底 BG** (#F7F6F3) / **卡面 Surface** (#FFFFFF)：双色阶地面。
+- **次级 Ink-2** (#5C5F66)：正文次级，对比 5.9:1。**禁用冷灰系**，一律此暖灰。
+- **弱级 Ink-3** (#8A8D94)：仅限大号装饰字（marquee 26px）与占位骨架。
+- **发丝线 Hairline** (#E6E4DE)：全部分区线与卡片描边。
+- **深墨面板 Panel** (#191B20) + **纸色前景** (#F2F1EC)：联系面板的色彩反转章节。
 
 ### Named Rules
-**The 朱砂十成一 Rule.** 朱砂只给"印记级"元素（印、绦带、主 CTA、当前幕）。它是戳记，不是涂装。
+**The 朱砂唯一 Rule.** 一屏内朱砂只出现在链接与一个主交互上；出现第二处强调色即为设计错误。
 
 ## Typography
 
-**Display/Body Font:** Noto Serif SC（CDN，font-display: swap；回退 Songti SC / STSong）
-**Stage Direction Font:** Kaiti SC / STKaiti / KaiTi（系统字，不加载）
-
-**Character:** 宋体系的骨架承担"戏单排印"的传统；楷体只用于舞台指示，制造"念白"的声部差。
+**Display:** Geist + Noto Sans SC 700；**Body:** 同族 400；**Mono:** Geist Mono（度量专用，不做装饰）
 
 ### Hierarchy
-- **Display** (900, clamp(56px, 11vh, 104px), 0.18em tracking, vertical-rl)：仅用于"黄锦"题字。
-- **Headline** (900, clamp(24px, 4.6vh, 38px))：幕名，下缘缀 3.2em 朱砂短线。
-- **Lead** (600, clamp(22px, 4.4vh, 40px), 1.4)：开场句。
-- **Body** (500, clamp(14px, 2.1vh, 17px), 1.9)：正文，≤34em 行长。
-- **Stage Direction** (楷体, 括号体例)：占位说明、氛围句。凡"待补"内容一律用此声部。
+- **Display** (700, clamp(3.25rem, 6vw, 5.25rem))：仅 hero 姓名「黄锦」。
+- **Headline** (700, clamp(1.7rem, 3vw, 2.4rem))：分区标题。
+- **Lead** (400, clamp(1.05rem, 1.6vw, 1.25rem), 1.7)：hero 定位句，≤30em。
+- **Body** (400, 16px, 1.7)：正文，≤42em 行长。
+- **Mono** (400-500, 11.5-14px)：标签、年份、域名、邮箱——只承载真实度量。
 
 ### Named Rules
-**The 括号即旁白 Rule.** 圆括号 + 楷体 = 舞台指示声部，专用于占位与氛围句，绝不用于操作性文案。
+**The Mono 即度量 Rule.** Geist Mono 只用于真实数据（年份、域名、邮箱、技术标签）；用等宽字扮演"技术感"是禁手。
 
 ## Layout
 
-桌面端是"一屏一台"：`.room` 100dvh 纵向 flex（顶梁 → 戏台 → 落款），`.stage` 内只有绢幕参与 flex，其余（侧框、底梁、木牌）一律绝对定位。绢幕宽 min(100%, 1400px)，内容左侧留 lg（clamp(24px, 6%, 84px)）起排，右侧 34vw 让位给皮影。≤860px 切换为文档流：木牌横排置顶、题字横排、皮影缩小浮于右上、幕文顺排，`body` 允许滚动。
+72rem 容器，分区纵向节奏 clamp(88px, 12vw, 152px)。Hero 为 7/5 分栏（Editorial Split），≤1024px 折单列且文字先行。作品区为 6 列 `grid-auto-flow: dense` Bento：主推卡 4列×2行，次卡 2列，三卡行 3+3——数学上零空洞；≤1024px 两列、≤640px 单列。所有触摸目标 ≥44px。
 
 ## Elevation & Depth
 
-深度来自"光"而非"层"：绢幕的外发光（0 0 clamp(30px,6vw,90px) rgba(232,163,61,.16)）宣告它是唯一光源面；木构件用方向性阴影（0 6px 14px rgba(0,0,0,.5)）表达体量；皮影以 drop-shadow(-12px 14px 14px rgba(70,46,16,.32)) 把影子落在绢上。零偏移彩色光晕只允许出现在绢幕辉光一处。
+浅色区以 hairline 描边 + 极淡投影（0 2px 6px 5%）分层，hover 升起至 0 14px 34px 10%；深墨联系面板用径向朱砂辉光（22% 透明度）做氛围，是全页唯一允许的"光晕"。
+
+### Shadow Vocabulary
+- **card** (`0 2px 6px rgba(23,24,28,.05)`)：卡片静置。
+- **lift** (`0 14px 34px rgba(23,24,28,.10)`)：卡片/按钮 hover。
+- **panel-glow** (radial rgba(200,64,47,.22))：联系面板专属。
 
 ## Shapes
 
-圆角克制：屏 10px、构件 4px、小签 3px。木构件以 repeating-linear-gradient 的细密线纹做木纹与绢纹（1px 线，3–5px 周期，4.5% 以下透明度）——纹理只从题材世界来。皮影的轮廓语言：圆润的头部弧线、宽袍、水袖的贝塞尔飘带；镂空以绢色圆点与透染淡彩表达。
+圆角阶梯：按钮 12 / 卡片 14 / 视觉面板 20 / 联系面板 24。标签为 999px 胶囊。分隔一律 1px 发丝线，不用阴影线或粗边框。
 
 ## Components
 
 ### Buttons
-- **Shape:** 4px 圆角，衬线 600，0.14em tracking
-- **Primary（印章钮）:** 朱砂底 + 内嵌 3px 绢色描边（inset box-shadow），padding 12px 22px；hover 提亮 + 上浮 2px
-- **Ghost:** 透明底、1px 墨线框；移动端强制绢色实底保证可读
-- **Focus:** 2px amber outline, offset 3px
+墨底白字（primary）、白底墨字（ghost）、纸底墨字（invert，深面板内）、透明纸边（outline，深面板内）。统一 12px 圆角、13px×24px 内距、44px 最小高度、右上箭头 SVG。
 
-### 幕名木牌（Navigation）
-竖排木牌挂于顶梁（top:-14px），活动态换绢底墨字 + 朱砂穗；键盘 ←/→ 翻幕。移动端转横排胶囊，活动态朱砂底。
+### 卡片（Bento Card）
+白卡面 + 发丝边 + 静置淡投影；hover：上浮 5px、投影加深、边框染朱砂 35%、图片 scale(1.05)、箭头位移动画。媒体带 aspect 21/10，图带灰度滤镜（grayscale .5）保持编辑感。标签行：Mono 胶囊。
 
-### 戏单行（Playbill Row）
-上/下 1px 分隔线的节目单行（非卡片）：剧名（衬线 600，min-width 8.5em）→ 剧种小签（1px 框 11px）→ 楷体戏文 → SVG 外链箭头。hover：淡金底 + translateX(8px)。
+### 导航
+固定顶栏，滚动 24px 后加毛玻璃纸底 + 发丝下边线。左品牌（朱砂方点 + 姓名），右锚点链接 + GitHub 图标；链接触摸区 ≥44px。
 
-### 皮影人偶（Signature Component）
-420×680 viewBox 的关节化 SVG：脖、躯、双肩双肘六个关节各持 CSS 变量角度，JS 以 lerp 插值 + 每幕姿势库 + 光标跟踪驱动；两根竹签以底端为轴反推角度。`prefers-reduced-motion` 下静止。水袖、镂空孔、朱砂绒球是轮廓的一部分，删改前先读 `js/main.js` 的 POSES。
+### 时间线 / 现在区
+行式结构：Mono 年份列（88px）+ 内容卡；占位条目用虚线边框 + 弱色文字，明确"待补"而不伪装完成。
+
+### 无限滚带（Marquee）
+发丝线上下夹住的大号技术词滚带（26px, Ink-3），朱砂圆点分隔；30s 线性循环，reduced-motion 静止。
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** 让新内容住进"幕"结构：一个区块 = 一幕，配一条姿势库记录（`POSES`）。
-- **Do** 占位与未定内容一律用楷体括号声部标注「待补」。
-- **Do** 新增强调元素时先问：它配得上朱砂吗？不配就用墨或木。
+- **Do** 新区块沿用 72rem 容器 + clamp 纵向节奏 + 发丝线分区。
+- **Do** 占位内容用虚线骨架 + 「待补」明示，保持诚实。
+- **Do** 真实数据（项目、年份、链接）放 Mono 胶囊或 now 行。
 
 ### Don't:
-- **Don't** 引入冷灰色（次级文字用 #6b5335 系暖棕）。
-- **Don't** 给皮影或文字加发光/霓虹效果——光只属于绢幕后的那盏灯。
-- **Don't** 用 emoji/字符当图标；外链箭头用 `#arrow-ne` symbol。
-- **Don't** 在夜堂区域放内容卡片；夜堂只有梁、框、落款。
+- **Don't** 引入第二强调色或渐变文字；朱砂之外只有墨阶。
+- **Don't** 用 emoji/字符图标；箭头一律 `#arrow` 形状的描边 SVG。
+- **Don't** 在浅色区使用冷灰（#888/#999 系），次级文字只用 #5C5F66。
+- **Don't** 添加装饰彩蛋、隐喻包装（旧皮影世界已退役）。
+- **Don't** 编造经历、评价或数据；未确认信息一律占位标注。

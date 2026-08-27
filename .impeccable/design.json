@@ -1,76 +1,78 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-28T00:55:00+08:00",
-  "title": "Design System: 皮影戏台 · huangjin.online",
+  "generatedAt": "2026-08-28T02:20:00+08:00",
+  "title": "Design System: 黄锦 Huang Jin · 个人主页 v2",
   "extensions": {
     "colorMeta": {
-      "seal": { "role": "primary", "displayName": "朱砂 Seal", "canonical": "#bf3524" },
-      "silk": { "role": "primary", "displayName": "绢 Silk", "canonical": "#f0e4c8" },
-      "room": { "role": "neutral", "displayName": "夜堂 Room", "canonical": "#171008" },
-      "wood": { "role": "neutral", "displayName": "台框木 Wood", "canonical": "#3a2a18" },
-      "ink": { "role": "neutral", "displayName": "皮影墨 Ink", "canonical": "#241a10" },
-      "amber": { "role": "tertiary", "displayName": "灯焰 Amber", "canonical": "#e8a33d" }
+      "accent": { "role": "primary", "displayName": "朱砂 Accent", "canonical": "#C8402F" },
+      "ink": { "role": "primary", "displayName": "墨 Ink", "canonical": "#17181C" },
+      "bg": { "role": "neutral", "displayName": "纸底 BG", "canonical": "#F7F6F3" },
+      "panel": { "role": "neutral", "displayName": "深墨面板 Panel", "canonical": "#191B20" }
     },
     "shadows": [
-      { "name": "silk-glow", "value": "0 0 clamp(30px, 6vw, 90px) rgba(232,163,61,0.16)", "purpose": "绢幕被灯打亮的外发光；全场唯一光晕。" },
-      { "name": "wood-mass", "value": "0 6px 14px rgba(0,0,0,0.5)", "purpose": "木梁与台框的体量感。" },
-      { "name": "puppet-cast", "value": "drop-shadow(-12px 14px 14px rgba(70,46,16,0.32))", "purpose": "皮影投在绢上的影子，随关节自动跟随。" }
+      { "name": "card", "value": "0 2px 6px rgba(23,24,28,0.05)", "purpose": "卡片静置投影" },
+      { "name": "lift", "value": "0 14px 34px rgba(23,24,28,0.10)", "purpose": "hover 升起投影" },
+      { "name": "panel-glow", "value": "radial-gradient(70% 90% at 88% 8%, rgba(200,64,47,0.22), transparent 55%)", "purpose": "联系面板朱砂辉光，全页唯一光晕" }
     ],
     "motion": [
-      { "name": "act-switch", "value": "opacity/filter/transform 0.55s ease (0.12s delay)", "purpose": "换幕：旧幕淡出虚化、新幕自右侧入场，配 lamp-flicker 灯焰轻晃。" },
-      { "name": "joint-lerp", "value": "k=0.055 per-frame lerp", "purpose": "皮影关节朝目标姿势（光标+呼吸+幕姿势库）的缓动。" }
+      { "name": "entrance", "value": "gsap from y:26 opacity:0 0.8s power3.out (ScrollTrigger once)", "purpose": "区块一次性入场" },
+      { "name": "image-scale-fade", "value": "gsap fromTo scale 0.82->1 (enter), opacity->0.22 + brightness 0.75 (exit), scrub 0.6", "purpose": "作品图滚动缩放与淡出" },
+      { "name": "hover-physics", "value": "translateY(-5px) + shadow-lift, 0.5s cubic-bezier(0.22,1,0.36,1)", "purpose": "卡片与按钮悬停物理" },
+      { "name": "marquee", "value": "translateX(-50%) 30s linear infinite", "purpose": "技术栈无限滚带" }
     ],
     "breakpoints": [
-      { "name": "mobile", "value": "860px" }
+      { "name": "tablet", "value": "1024px" },
+      { "name": "mobile", "value": "640px" }
     ]
   },
   "components": [
     {
-      "name": "印章按钮 Primary",
+      "name": "主按钮 Primary",
       "kind": "button",
-      "refersTo": "button-seal",
-      "description": "朱砂底、内嵌绢色描边的主行动钮。",
-      "html": "<a class=\"ds-btn-seal\" href=\"#\">联络班主</a>",
-      "css": ".ds-btn-seal { display:inline-flex; font-family:'Noto Serif SC',serif; font-weight:600; letter-spacing:0.14em; text-decoration:none; border-radius:4px; padding:12px 22px; background:#bf3524; color:#fbf3dd; border:1px solid #97301f; box-shadow:0 6px 18px rgba(191,53,36,0.35), inset 0 0 0 3px rgba(240,228,200,0.22); transition:transform .2s ease, background .2s ease; } .ds-btn-seal:hover { background:#d94a30; transform:translateY(-2px); } .ds-btn-seal:focus-visible { outline:2px solid #e8a33d; outline-offset:3px; }"
+      "refersTo": "button-primary",
+      "description": "墨底白字主行动钮，带右上箭头。",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">查看作品 <svg width=\"14\" height=\"14\" viewBox=\"0 0 16 16\"><path d=\"M4,12 L12,4 M5.5,4 H12 V10.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:8px; font-family:Geist,'Noto Sans SC',sans-serif; font-weight:600; font-size:15px; text-decoration:none; border-radius:12px; padding:13px 24px; min-height:44px; background:#17181C; color:#fff; box-shadow:0 8px 20px rgba(23,24,28,0.18); transition:transform .25s cubic-bezier(0.22,1,0.36,1), box-shadow .25s ease; } .ds-btn-primary:hover { background:#000; transform:translateY(-2px); box-shadow:0 12px 26px rgba(23,24,28,0.22); } .ds-btn-primary:focus-visible { outline:2px solid #C8402F; outline-offset:3px; }"
     },
     {
       "name": "幽灵按钮 Ghost",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "透明底墨线框的次级按钮。",
-      "html": "<button class=\"ds-btn-ghost\">翻看戏单</button>",
-      "css": ".ds-btn-ghost { display:inline-flex; font-family:'Noto Serif SC',serif; font-weight:600; letter-spacing:0.14em; border-radius:4px; padding:12px 22px; background:transparent; color:#241a10; border:1px solid rgba(36,26,16,0.55); cursor:pointer; transition:transform .2s ease, background .2s ease; } .ds-btn-ghost:hover { border-color:#241a10; background:rgba(36,26,16,0.06); transform:translateY(-2px); } .ds-btn-ghost:focus-visible { outline:2px solid #e8a33d; outline-offset:3px; }"
+      "description": "白底墨字发丝边次级按钮。",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">GitHub</a>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; gap:8px; font-family:Geist,'Noto Sans SC',sans-serif; font-weight:600; font-size:15px; text-decoration:none; border-radius:12px; padding:13px 24px; min-height:44px; background:#fff; color:#17181C; border:1px solid #E6E4DE; transition:transform .25s cubic-bezier(0.22,1,0.36,1), border-color .2s ease; } .ds-btn-ghost:hover { border-color:#17181C; transform:translateY(-2px); } .ds-btn-ghost:focus-visible { outline:2px solid #C8402F; outline-offset:3px; }"
     },
     {
-      "name": "幕名木牌（当前态）",
-      "kind": "nav",
-      "refersTo": "act-tag-active",
-      "description": "顶部挂帘式导航的激活项：绢底墨字加朱砂穗。",
-      "html": "<button class=\"ds-act-tag\" aria-current=\"true\"><span class=\"ds-tassel\"></span>开场</button>",
-      "css": ".ds-act-tag { position:relative; appearance:none; border:0; cursor:pointer; font-family:'Noto Serif SC',serif; font-weight:600; letter-spacing:0.3em; font-size:15px; padding:12px 5px 14px; border-radius:3px; color:#241a10; background:linear-gradient(180deg,#fbf3dd,#ddc9a0); border:1px solid #ddc9a0; box-shadow:0 4px 14px rgba(0,0,0,0.45); } .ds-tassel { position:absolute; left:50%; bottom:-10px; transform:translateX(-50%); width:5px; height:8px; border-radius:2px; background:#bf3524; } .ds-act-tag:focus-visible { outline:2px solid #e8a33d; outline-offset:3px; }"
-    },
-    {
-      "name": "戏单行",
+      "name": "Bento 卡片",
       "kind": "card",
-      "refersTo": "playbill-row",
-      "description": "节目单式项目行：剧名/剧种签/戏文/外链箭头。",
-      "html": "<div class=\"ds-play\"><a class=\"ds-play-name\" href=\"#\">gotato</a><span class=\"ds-play-genre\">Go</span><span class=\"ds-play-note\">Go 原生的 Agent 服务</span><span class=\"ds-play-arrow\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 16 16\"><path d=\"M4,12 L12,4 M5.5,4 H12 V10.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></div>",
-      "css": ".ds-play { display:flex; align-items:baseline; gap:14px; padding:12px 2px; border-bottom:1px solid rgba(107,83,53,0.35); transition:background .25s ease, transform .25s ease; } .ds-play:hover { background:rgba(232,163,61,0.12); transform:translateX(8px); } .ds-play-name { font-family:'Noto Serif SC',serif; font-weight:600; font-size:17px; color:#241a10; text-decoration:none; min-width:8.5em; } .ds-play-genre { font-size:11px; letter-spacing:0.12em; color:#6b5335; border:1px solid rgba(107,83,53,0.45); border-radius:2px; padding:2px 6px; } .ds-play-note { font-family:'Kaiti SC','STKaiti',serif; font-size:14px; color:#45351f; flex:1; } .ds-play-arrow { color:#6b5335; display:inline-flex; }"
+      "refersTo": "card",
+      "description": "作品卡：标签胶囊 + 标题 + 描述 + 朱砂链接行；hover 物理升起。",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-body\"><div class=\"ds-tags\"><span>Go</span><span>Agent Runtime</span></div><h3 class=\"ds-title\">gotato</h3><p class=\"ds-desc\">Go 原生的 Agent-as-a-Service：紧凑的运行时内核，一条规范的 Agent 循环。</p><span class=\"ds-link\">阅读源码 <svg width=\"13\" height=\"13\" viewBox=\"0 0 16 16\"><path d=\"M4,12 L12,4 M5.5,4 H12 V10.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></div></a>",
+      "css": ".ds-card { display:flex; flex-direction:column; background:#fff; border:1px solid #E6E4DE; border-radius:14px; overflow:hidden; text-decoration:none; box-shadow:0 2px 6px rgba(23,24,28,0.05); transition:transform .5s cubic-bezier(0.22,1,0.36,1), box-shadow .5s cubic-bezier(0.22,1,0.36,1), border-color .3s ease; } .ds-card:hover { transform:translateY(-5px); box-shadow:0 14px 34px rgba(23,24,28,0.10); border-color:rgba(200,64,47,0.35); } .ds-card-body { display:flex; flex-direction:column; gap:10px; padding:24px 26px; flex:1; } .ds-tags { display:flex; gap:8px; flex-wrap:wrap; } .ds-tags span { font-family:'Geist Mono',monospace; font-size:11.5px; letter-spacing:0.04em; color:#5C5F66; border:1px solid #E6E4DE; border-radius:999px; padding:3px 10px; } .ds-title { font-family:Geist,sans-serif; font-weight:700; font-size:1.4rem; letter-spacing:-0.01em; color:#17181C; } .ds-desc { color:#5C5F66; font-size:15px; line-height:1.7; } .ds-link { margin-top:auto; padding-top:10px; display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:600; color:#C8402F; }"
+    },
+    {
+      "name": "深面板按钮 Invert / Outline",
+      "kind": "button",
+      "refersTo": "button-invert",
+      "description": "深墨面板内的双按钮：纸底反白 + 透明描边。",
+      "html": "<div style=\"background:#191B20;padding:24px;border-radius:16px;display:flex;gap:14px\"><a class=\"ds-btn-invert\" href=\"#\">发邮件</a><a class=\"ds-btn-outline\" href=\"#\">GitHub</a></div>",
+      "css": ".ds-btn-invert { display:inline-flex; align-items:center; font-family:Geist,'Noto Sans SC',sans-serif; font-weight:600; font-size:15px; text-decoration:none; border-radius:12px; padding:13px 24px; min-height:44px; background:#F2F1EC; color:#17181C; box-shadow:0 10px 24px rgba(0,0,0,0.3); transition:transform .25s cubic-bezier(0.22,1,0.36,1); } .ds-btn-invert:hover { background:#fff; transform:translateY(-2px); } .ds-btn-outline { display:inline-flex; align-items:center; font-family:Geist,'Noto Sans SC',sans-serif; font-weight:600; font-size:15px; text-decoration:none; border-radius:12px; padding:13px 24px; min-height:44px; background:transparent; color:#F2F1EC; border:1px solid rgba(242,241,236,0.4); transition:transform .25s cubic-bezier(0.22,1,0.36,1), border-color .2s ease; } .ds-btn-outline:hover { border-color:rgba(242,241,236,0.9); transform:translateY(-2px); }"
     }
   ],
   "narrative": {
-    "northStar": "一堂被灯点亮的皮影戏",
-    "overview": "整个系统是一座戏台：页面地面是深夜的堂屋，中央一方被灯光从背后打亮的米色绢幕承载全部内容，墨色皮影人偶以竹签操纵、随访客光标起舞。朱砂红是唯一的强调色，只在印、绦带、主按钮、活动幕牌上出现。所有文案使用戏团体例：标题是幕名，说明是舞台指示（圆括号楷体）。",
+    "northStar": "The Calm Engineering Editorial（冷静工程编辑）",
+    "overview": "面向 recruiter、开发者同行与朋友的单页专业主页：recruiter 8 秒内扫完定位、作品与联系。纸感底色上以发丝线分章，Bento 矩阵承载作品证据，深墨面板收束行动。朱砂是唯一强调色，从锦字印章延续而来的身份锚点。",
     "keyCharacteristics": [
-      "内容永远住在发光的绢幕上，夜堂只做包裹与留白",
-      "皮影是可动资产（SVG 关节 + CSS 变量驱动），不是插图",
-      "中文竖排在桌面端承担展示层；移动端全部转为横排文档流"
+      "暖纸底 + 白卡面 + 发丝线分区，编辑风的留白与密度",
+      "单一朱砂强调：链接、主交互、关键点；稀有即分量",
+      "Geist + Noto Sans SC + Geist Mono（度量专用）",
+      "动效克制：GSAP 入场 + 作品图滚动缩放淡出；reduced-motion 全降级"
     ],
     "rules": [
-      { "name": "The 朱砂十成一 Rule", "body": "朱砂只给印记级元素（印、绦带、主 CTA、当前幕）。它是戳记，不是涂装。", "section": "colors" },
-      { "name": "The 括号即旁白 Rule", "body": "圆括号 + 楷体 = 舞台指示声部，专用于占位与氛围句。", "section": "typography" }
+      { "name": "The 朱砂唯一 Rule", "body": "一屏内朱砂只出现在链接与一个主交互上。", "section": "colors" },
+      { "name": "The Mono 即度量 Rule", "body": "等宽字只承载真实数据，不做技术感装饰。", "section": "typography" }
     ],
-    "dos": ["让新内容住进幕结构，一区块一幕一姿势", "占位与未定内容用楷体括号标注待补"],
-    "donts": ["不引入冷灰色", "不给皮影或文字加发光/霓虹效果", "不用 emoji/字符当图标", "不在夜堂区域放内容卡片"]
+    "dos": ["新区块沿用 72rem 容器 + clamp 节奏 + 发丝线", "占位用虚线骨架 + 待补明示", "真实数据用 Mono 胶囊或 now 行"],
+    "donts": ["不引入第二强调色或渐变文字", "不用 emoji/字符图标", "浅色区不用冷灰", "不加装饰彩蛋（皮影世界已退役）", "不编造经历、评价或数据"]
   }
 }

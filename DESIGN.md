@@ -113,7 +113,7 @@ components:
 固定顶栏：品牌、项目、联系、CN / EN、GitHub。语言按钮最小高度 44px；选择状态只改变文字颜色。首次按浏览器语言选择，手动选择写入 `hj-locale` localStorage。
 
 ### Project Index
-可点击的整行项目条目：项目名与 Mono meta 在左、说明居中、GitHub 链接在右；移动端自然折行。hover 只把项目名转为 Accent，不位移、不缩放。
+项目条目：项目名（链接到 GitHub）与 Mono meta 在左、说明居中、链接组在右。有独立站点的项目显示朱砂「网站」链接 + 次级色 GitHub 链接；没有站点的只显示朱砂 GitHub 链接。移动端链接组横排在描述下方。hover 只改颜色与下划线，不位移、不缩放。
 
 ### Keyword Marquee
 16 个真实技术关键词，两份等长序列保证无缝循环。48 秒线性滚动；`prefers-reduced-motion` 时静止。

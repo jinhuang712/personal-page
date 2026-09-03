@@ -6,7 +6,7 @@
       lang: 'zh-CN',
       title: '黄锦 Huang Jin — 软件工程师',
       description: '黄锦的个人主页：构建面向 AI Agent 与开发者的开源工具。',
-      nav: { aria: '页面导航', language: '语言切换', projects: '项目', contact: '联系' },
+      nav: { aria: '页面导航', language: '语言切换', projects: '项目', contact: '联系', skip: '跳到项目' },
       hero: {
         intro: '你好，我是黄锦，一名软件工程师，主要做 AI 工具和 Agent 相关的开源项目。',
         contactLabel: '合作、招聘与联系：'
@@ -18,7 +18,8 @@
       projects: {
         aria: '开源项目',
         title: '开源项目',
-        lead: '以下项目按代码体量与最近推送综合排序。',
+        lead: '以下项目按代码体量与最近推送综合排序；带「网站」的项目托管在 project.huangjin.online。',
+        site: '网站',
         jsonita: { meta: 'TypeScript · macOS / Windows', desc: 'macOS 与 Windows 菜单栏 JSON 工具箱：格式化、树状预览、转换与 AI 辅助修复。' },
         'pi-view': { meta: 'TypeScript · Pi Extension', desc: '为纯文本模型提供显式 view 工具，并把图像路由给视觉模型的 Pi 扩展。' },
         'ant-agent': { meta: 'Shell · Agents', desc: '一次性子代理集合，把临时调查任务隔离在主上下文之外。' },
@@ -39,7 +40,7 @@
       lang: 'en',
       title: 'Huang Jin — Software Engineer',
       description: 'Huang Jin builds open-source tools for AI agents and developers.',
-      nav: { aria: 'Primary navigation', language: 'Language selector', projects: 'Projects', contact: 'Contact' },
+      nav: { aria: 'Primary navigation', language: 'Language selector', projects: 'Projects', contact: 'Contact', skip: 'Skip to projects' },
       hero: {
         intro: "Hi, I'm Huang Jin, a software engineer building open-source tools for AI agents and developers.",
         contactLabel: 'For collaboration or opportunities:'
@@ -51,7 +52,8 @@
       projects: {
         aria: 'Open-source projects',
         title: 'Open-source projects',
-        lead: 'Projects ranked by codebase size and recent pushes.',
+        lead: 'Ranked by codebase size and recent pushes. Projects marked “Site” are hosted at project.huangjin.online.',
+        site: 'Site',
         jsonita: { meta: 'TypeScript · macOS / Windows', desc: 'A menu-bar JSON toolkit for macOS and Windows: formatting, tree inspection, conversion, and AI-assisted fixing.' },
         'pi-view': { meta: 'TypeScript · Pi Extension', desc: 'A Pi extension that gives text-only models an explicit view tool and routes images to a vision model.' },
         'ant-agent': { meta: 'Shell · Agents', desc: 'A disposable subagent collection that keeps one-off investigations out of the main context.' },
@@ -85,7 +87,7 @@
     if (!projectList) return;
     projectOrder.forEach(function (id) {
       var row = projectList.querySelector('[data-project="' + id + '"]');
-      if (row) projectList.appendChild(row.parentElement);
+      if (row) projectList.appendChild(row);
     });
   }
 

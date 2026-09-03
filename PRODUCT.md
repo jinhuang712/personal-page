@@ -33,6 +33,7 @@ Delegated（用户授权）：纯静态 HTML/CSS/JavaScript，无构建步骤，
 ## Capabilities and Constraints
 
 - 纯静态；联系走 mailto、GitHub、LinkedIn。
+- 有独立站点的项目在清单中附「网站」链接，指向 `project.huangjin.online/<项目名>/`（由 jinhuang712/projects 仓库聚合各项目的 Pages 内容统一部署）。
 - 单页锚点导航：Hero → 技术关键词带 → 项目清单 → 联系。
 - 项目清单展示 13 个精选公开项目；Fork 与明确不对外展示的仓库不列出，项目按仓库体量与最近代码推送时间综合排序。
 - 移动端 360px 起必须无横向溢出；桌面端和移动端均经过截图及 DOM 几何验证。

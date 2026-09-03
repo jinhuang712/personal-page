@@ -51,6 +51,8 @@ js/main.js → const copy = { zh: ..., en: ... }
 
 ## 发布
 
+改动 `css/style.css` 或 `js/main.js` 后，同时更新 `index.html` 里引用的 `?v=` 版本号，避免浏览器沿用缓存的旧文件。
+
 GitHub Pages 从 `main` 分支发布，`git push origin main` 即上线。
 
 ## 域名与 DNS（火山引擎）

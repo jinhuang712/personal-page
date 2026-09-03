@@ -36,7 +36,7 @@ js/main.js → const copy = { zh: ..., en: ... }
 
 新增项目时，需要同时：
 
-1. 在 `index.html` 的 `.project-list` 新增一条 `li.project-row`（项目名链接到 GitHub；右侧 `.project-links` 放「网站」与「GitHub」两个链接，没有站点的只放 GitHub）；
+1. 在 `index.html` 对应分组（`.project-group`）的 `.project-list` 里新增一条 `li.project-row`（项目名链接到 GitHub；右侧 `.project-links` 放「网站」与「GitHub」两个链接，没有站点的只放 GitHub）；
 2. 在 `js/main.js` 的 `zh.projects` 与 `en.projects` 均补上对应的 `meta` / `desc`；
 3. 按 GitHub 的仓库体量和 `pushed_at` 更新 `projectOrder`。
 

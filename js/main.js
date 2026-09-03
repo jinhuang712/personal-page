@@ -20,6 +20,7 @@
         title: '开源项目',
         lead: '以下项目按代码体量与最近推送综合排序；带「网站」的项目托管在 project.huangjin.online。',
         site: '网站',
+        groups: { apps: '应用与扩展', claude: 'Claude Code 与 Codex', pi: 'Pi 扩展', dsh: 'DeepSeek Harness 插件' },
         jsonita: { meta: 'TypeScript · macOS / Windows', desc: 'macOS 与 Windows 菜单栏 JSON 工具箱：格式化、树状预览、转换与 AI 辅助修复。' },
         'pi-view': { meta: 'TypeScript · Pi Extension', desc: '为纯文本模型提供显式 view 工具，并把图像路由给视觉模型的 Pi 扩展。' },
         'ant-agent': { meta: 'Shell · Agents', desc: '一次性子代理集合，把临时调查任务隔离在主上下文之外。' },
@@ -54,6 +55,7 @@
         title: 'Open-source projects',
         lead: 'Ranked by codebase size and recent pushes. Projects marked “Site” are hosted at project.huangjin.online.',
         site: 'Site',
+        groups: { apps: 'Apps & Extensions', claude: 'Claude Code & Codex', pi: 'Pi Extensions', dsh: 'DeepSeek Harness Plugins' },
         jsonita: { meta: 'TypeScript · macOS / Windows', desc: 'A menu-bar JSON toolkit for macOS and Windows: formatting, tree inspection, conversion, and AI-assisted fixing.' },
         'pi-view': { meta: 'TypeScript · Pi Extension', desc: 'A Pi extension that gives text-only models an explicit view tool and routes images to a vision model.' },
         'ant-agent': { meta: 'Shell · Agents', desc: 'A disposable subagent collection that keeps one-off investigations out of the main context.' },
@@ -75,7 +77,7 @@
   var nav = document.getElementById('nav');
   var description = document.getElementById('meta-description');
   var marqueeTrack = document.getElementById('marquee-track');
-  var projectList = document.querySelector('.project-list');
+  var projectLists = Array.prototype.slice.call(document.querySelectorAll('.project-list'));
   var projectOrder = [
     'pi-x-footer', 'pi-view', 'dsh-survey', 'dsh-session-link', 'ant-agent',
     'pi-briefly', 'jsonita', 'page-snap', 'pivi', 'claude-code-qna',
@@ -84,10 +86,11 @@
   var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-locale]'));
 
   function sortProjects() {
-    if (!projectList) return;
-    projectOrder.forEach(function (id) {
-      var row = projectList.querySelector('[data-project="' + id + '"]');
-      if (row) projectList.appendChild(row);
+    projectLists.forEach(function (list) {
+      projectOrder.forEach(function (id) {
+        var row = list.querySelector('[data-project="' + id + '"]');
+        if (row) list.appendChild(row);
+      });
     });
   }
 

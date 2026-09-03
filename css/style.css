@@ -126,8 +126,17 @@ a { color: inherit; }
 .section { padding-top: clamp(76px, 10vw, 128px); }
 .section-title { font-size: clamp(1.7rem, 3vw, 2.35rem); font-weight: 700; letter-spacing: .01em; }
 .section-lead { max-width: 42rem; margin-top: 10px; color: var(--ink-2); }
+.project-group { margin-top: clamp(40px, 5vw, 56px); }
+.group-title {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--ink-3);
+  font: 500 12.5px/1 var(--font-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.group-title::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: .6; }
 .project-list {
-  margin-top: 38px;
+  margin-top: 14px;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

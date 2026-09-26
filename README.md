@@ -30,7 +30,7 @@ js/main.js → const copy = { zh: ..., en: ... }
 ```
 
 - 修改自我介绍：`hero.intro`
-- 修改技术关键词：`marquee.terms`
+- 修改技术关键词：`marquee.rows`（两行，分别对应两条反向滚动的关键词带）
 - 修改项目说明：`projects.<项目名>.meta` 和 `projects.<项目名>.desc`
 - 修改联系区文案：`contact`
 
@@ -38,7 +38,7 @@ js/main.js → const copy = { zh: ..., en: ... }
 
 1. 在 `index.html` 对应分组（`.project-group`）的 `.project-list` 里新增一条 `li.project-row`（项目名链接到 GitHub；右侧 `.project-links` 放「网站」与「GitHub」两个链接，没有站点的只放 GitHub）；
 2. 在 `js/main.js` 的 `zh.projects` 与 `en.projects` 均补上对应的 `meta` / `desc`；
-3. 按 GitHub 的仓库体量和 `pushed_at` 更新 `projectOrder`。
+3. 把项目加入 `projectOrder` 的合适位置（人工精选顺序）；分组数量由脚本自动统计。
 
 ## 项目站点（project.huangjin.online）
 

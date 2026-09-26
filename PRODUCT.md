@@ -35,7 +35,7 @@ Delegated（用户授权）：纯静态 HTML/CSS/JavaScript，无构建步骤，
 - 纯静态；联系走 mailto、GitHub、LinkedIn。
 - 有独立站点的项目在清单中附「网站」链接，指向 `project.huangjin.online/<项目名>/`（由 jinhuang712/projects 仓库聚合各项目的 Pages 内容统一部署）。
 - 单页锚点导航：Hero → 技术关键词带 → 项目清单 → 联系。
-- 项目清单展示 13 个精选公开项目；Fork 与明确不对外展示的仓库不列出，项目按仓库体量与最近代码推送时间综合排序。
+- 项目清单展示 17 个精选公开项目，分四组；Fork 与明确不对外展示的仓库不列出，组内顺序为人工精选（成熟度与重要性优先）。
 - 移动端 360px 起必须无横向溢出；桌面端和移动端均经过截图及 DOM 几何验证。
 - 未确认的经历、教育、简历、推荐语一律不显示，绝不以占位或虚构内容上线。
 
@@ -48,7 +48,7 @@ Delegated（用户授权）：纯静态 HTML/CSS/JavaScript，无构建步骤，
 ## Evidence on Hand
 
 - 姓名：黄锦（Huang Jin）、邮箱 huangjin712@qq.com、GitHub @jinhuang712、LinkedIn linkedin.com/in/jinhuang712 —— 已验证。
-- 仓库清单：展示 13 个精选公开项目；涵盖 Jsonita、Pi 扩展、DeepSeek Harness、Claude Code、Codex 与 Pivi 相关工具。
+- 仓库清单：展示 17 个精选公开项目；涵盖桌面与浏览器应用、Claude Code 插件、PID（Pi 桌面前端与扩展）和 DeepSeek Harness 插件。
 - 技术关键词：Go、TypeScript、Swift、Python、Shell、macOS、AI Agents、Agent Runtime、Developer Tools、CLI、Extensions、Automation、Open Source、Developer Experience、Code Intelligence、Tooling。
 
 ## Product Principles

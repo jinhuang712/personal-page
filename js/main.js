@@ -26,7 +26,6 @@
         'ant-agent': { meta: 'Shell · Agents', desc: '一次性子代理集合，把临时调查任务隔离在主上下文之外。' },
         'smart-cutout': { meta: 'Swift · Codex Skill', desc: '面向 Codex 的公开 Skill，用于交互式前景抠图和透明 PNG 素材。' },
         'claude-code-clip': { meta: 'Shell · macOS', desc: '将文件写入 macOS 剪贴板的工具，提供终端 clip 命令和 Claude Code 的 /clip。' },
-        'claude-code-qna': { meta: 'Python · Claude Code Plugin', desc: '将 Claude Code 对话中尚未决定的内容转换成可点击问题的插件。' },
         'claude-code-queue': { meta: 'Claude Code Plugin', desc: 'Claude Code 提示队列：/queue 将消息延后至当前轮次结束后按会话 FIFO 处理。' },
         'claude-code-super-statusline': { meta: 'TypeScript · Claude Code Plugin', desc: '在浏览器里设计的 Claude Code 状态栏：选一个预设，拖拽组件，对着真实会话实时重绘。' },
         'dsh-session-link': { meta: 'JavaScript · DSH Plugin', desc: 'DeepSeek Harness 插件：链接并读取 DSH 会话，将会话内容转为可读文本。' },
@@ -62,7 +61,6 @@
         'ant-agent': { meta: 'Shell · Agents', desc: 'A disposable subagent collection that keeps one-off investigations out of the main context.' },
         'smart-cutout': { meta: 'Swift · Codex Skill', desc: 'A public Codex skill for interactive foreground cutouts and transparent PNG assets.' },
         'claude-code-clip': { meta: 'Shell · macOS', desc: 'Put files, rather than text, on the macOS clipboard with a terminal clip command and /clip for Claude Code.' },
-        'claude-code-qna': { meta: 'Python · Claude Code Plugin', desc: 'A Claude Code plugin that turns everything still undecided in a conversation into clickable questions.' },
         'claude-code-queue': { meta: 'Claude Code Plugin', desc: 'A prompt queue for Claude Code: /queue defers a message until the current turn ends, in per-session FIFO order.' },
         'claude-code-super-statusline': { meta: 'TypeScript · Claude Code Plugin', desc: 'A Claude Code statusline you design in the browser: pick a preset, drag widgets into place, and watch it redraw live against your real session.' },
         'dsh-session-link': { meta: 'JavaScript · DSH Plugin', desc: 'A DeepSeek Harness plugin for linking to and reading DSH sessions as readable text.' },
@@ -82,7 +80,7 @@
   var projectLists = Array.prototype.slice.call(document.querySelectorAll('.project-list'));
   var projectOrder = [
     'claude-code-super-statusline', 'pi-x-footer', 'pi-view', 'dsh-survey', 'dsh-session-link', 'ant-agent',
-    'pi-briefly', 'jsonita', 'page-snap', 'pivi', 'claude-code-qna',
+    'pi-briefly', 'jsonita', 'page-snap', 'pivi',
     'smart-cutout', 'claude-code-queue', 'claude-code-clip'
   ];
   var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-locale]'));

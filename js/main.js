@@ -18,7 +18,7 @@
       projects: {
         aria: '开源项目',
         title: '开源项目',
-        lead: '以下项目按代码体量与最近推送综合排序；带「网站」的项目托管在 project.huangjin.online。',
+        lead: '以下项目按代码体量与最近推送综合排序；带「网站」的项目有在线站点，多数托管在 project.huangjin.online。',
         site: '网站',
         groups: { apps: '应用与扩展', claude: 'Claude Code', pi: 'Pi 扩展', dsh: 'DeepSeek Harness 插件', others: '其他' },
         jsonita: { meta: 'TypeScript · macOS / Windows', desc: 'macOS 与 Windows 菜单栏 JSON 工具箱：格式化、树状预览、转换与 AI 辅助修复。' },
@@ -28,6 +28,7 @@
         'claude-code-clip': { meta: 'Shell · macOS', desc: '将文件写入 macOS 剪贴板的工具，提供终端 clip 命令和 Claude Code 的 /clip。' },
         'claude-code-qna': { meta: 'Python · Claude Code Plugin', desc: '将 Claude Code 对话中尚未决定的内容转换成可点击问题的插件。' },
         'claude-code-queue': { meta: 'Claude Code Plugin', desc: 'Claude Code 提示队列：/queue 将消息延后至当前轮次结束后按会话 FIFO 处理。' },
+        'claude-code-super-statusline': { meta: 'TypeScript · Claude Code Plugin', desc: '在浏览器里设计的 Claude Code 状态栏：选一个预设，拖拽组件，对着真实会话实时重绘。' },
         'dsh-session-link': { meta: 'JavaScript · DSH Plugin', desc: 'DeepSeek Harness 插件：链接并读取 DSH 会话，将会话内容转为可读文本。' },
         'dsh-survey': { meta: 'JavaScript · DSH Plugin', desc: 'DeepSeek Harness 批量问卷插件，支持多种问题类型与提交后的回顾。' },
         'page-snap': { meta: 'JavaScript · Chrome Extension', desc: 'Chrome 扩展：将网页保存为保真、可供 AI 阅读的 MHTML、单页 HTML 或 ZIP 归档。' },
@@ -53,7 +54,7 @@
       projects: {
         aria: 'Open-source projects',
         title: 'Open-source projects',
-        lead: 'Ranked by codebase size and recent pushes. Projects marked “Site” are hosted at project.huangjin.online.',
+        lead: 'Ranked by codebase size and recent pushes. Projects marked “Site” have a live site, most of them at project.huangjin.online.',
         site: 'Site',
         groups: { apps: 'Apps & Extensions', claude: 'Claude Code', pi: 'Pi Extensions', dsh: 'DeepSeek Harness Plugins', others: 'Others' },
         jsonita: { meta: 'TypeScript · macOS / Windows', desc: 'A menu-bar JSON toolkit for macOS and Windows: formatting, tree inspection, conversion, and AI-assisted fixing.' },
@@ -63,6 +64,7 @@
         'claude-code-clip': { meta: 'Shell · macOS', desc: 'Put files, rather than text, on the macOS clipboard with a terminal clip command and /clip for Claude Code.' },
         'claude-code-qna': { meta: 'Python · Claude Code Plugin', desc: 'A Claude Code plugin that turns everything still undecided in a conversation into clickable questions.' },
         'claude-code-queue': { meta: 'Claude Code Plugin', desc: 'A prompt queue for Claude Code: /queue defers a message until the current turn ends, in per-session FIFO order.' },
+        'claude-code-super-statusline': { meta: 'TypeScript · Claude Code Plugin', desc: 'A Claude Code statusline you design in the browser: pick a preset, drag widgets into place, and watch it redraw live against your real session.' },
         'dsh-session-link': { meta: 'JavaScript · DSH Plugin', desc: 'A DeepSeek Harness plugin for linking to and reading DSH sessions as readable text.' },
         'dsh-survey': { meta: 'JavaScript · DSH Plugin', desc: 'A DeepSeek Harness questionnaire plugin for batch questions, multiple input types, and post-submit recap.' },
         'page-snap': { meta: 'JavaScript · Chrome Extension', desc: 'A Chrome extension that saves pages as faithful, AI-readable MHTML, single HTML, or ZIP archives.' },
@@ -79,7 +81,7 @@
   var marqueeTrack = document.getElementById('marquee-track');
   var projectLists = Array.prototype.slice.call(document.querySelectorAll('.project-list'));
   var projectOrder = [
-    'pi-x-footer', 'pi-view', 'dsh-survey', 'dsh-session-link', 'ant-agent',
+    'claude-code-super-statusline', 'pi-x-footer', 'pi-view', 'dsh-survey', 'dsh-session-link', 'ant-agent',
     'pi-briefly', 'jsonita', 'page-snap', 'pivi', 'claude-code-qna',
     'smart-cutout', 'claude-code-queue', 'claude-code-clip'
   ];
